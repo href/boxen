@@ -49,6 +49,7 @@ class people::href {
     include iterm2::stable
     include alfred
     include slate
+    include hipchat
     
     # sublime text
     include sublime_text_2
