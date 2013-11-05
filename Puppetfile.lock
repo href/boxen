@@ -69,6 +69,11 @@ GITHUBTARBALL
     openssl (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-osx
+  specs:
+    osx (2.0.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-phantomjs
   specs:
     phantomjs (2.0.2)
@@ -114,6 +119,11 @@ GITHUBTARBALL
     xquartz (1.1.0)
 
 GITHUBTARBALL
+  remote: haelmy/puppet-ohmyzsh
+  specs:
+    ohmyzsh (0.0.1)
+
+GITHUBTARBALL
   remote: haelmy/puppet-wuala
   specs:
     wuala (0.0.1)
@@ -148,8 +158,10 @@ DEPENDENCIES
   inifile (= 1.0.0)
   nginx (= 1.4.2)
   nodejs (= 3.3.0)
+  ohmyzsh (= 0.0.1)
   onepassword (= 1.0.2)
   openssl (= 1.0.0)
+  osx (= 2.0.0)
   phantomjs (= 2.0.2)
   pkgconfig (= 1.0.0)
   repository (= 2.2.0)

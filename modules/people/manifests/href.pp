@@ -5,7 +5,7 @@ class people::href {
     $github = "href"
     $dotfiles = "${home}/.dotfiles"
 
-    # apps
+    # core
     include firefox
     include onepassword
     include dropbox
@@ -13,6 +13,7 @@ class people::href {
     include skype
     include spotify
     include chrome
+    include ohmyzsh
     
     # sublime text
     include sublime_text_2
@@ -47,5 +48,10 @@ class people::href {
       ensure  => link,
       target  => "${dotfiles}/.slate",
       require => Repository[$dotfiles]
+    }
+
+    # use zsh as default shell
+    osx_chsh { $::boxen_user :
+        shell => "/bin/zsh",
     }
 }
