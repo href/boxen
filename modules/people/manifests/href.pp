@@ -8,5 +8,7 @@ class people::href {
     sublime_text_2::package { 'GitGutter' :
         source => 'jisaacks/GitGutter'
     }
+
+    include onepassword
 }
 

@@ -103,6 +103,11 @@ GITHUBTARBALL
   specs:
     stdlib (4.1.0)
 
+GITHUBTARBALL
+  remote: rtircher/puppet-onepassword
+  specs:
+    onepassword (1.0.2)
+
 DEPENDENCIES
   boxen (= 3.3.4)
   dnsmasq (= 1.0.0)
@@ -116,6 +121,7 @@ DEPENDENCIES
   inifile (= 1.0.0)
   nginx (= 1.4.2)
   nodejs (= 3.3.0)
+  onepassword (= 1.0.2)
   openssl (= 1.0.0)
   phantomjs (= 2.0.2)
   pkgconfig (= 1.0.0)

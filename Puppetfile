@@ -57,3 +57,4 @@ github "xquartz",    "1.1.0"
 # https://github.com/boxen.
 github "firefox",        "1.1.4"
 github "sublime_text_2", "1.1.2"
+github "onepassword",    "1.0.2", :repo => "rtircher/puppet-onepassword"
