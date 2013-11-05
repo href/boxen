@@ -4,6 +4,7 @@ class people::href {
     $home = "/Users/${::boxen_user}"
     $github = "href"
     $dotfiles = "${home}/.dotfiles"
+    $userfiles = "puppet:///modules/people/${github}"
 
     # osx config
     include osx::global::enable_keyboard_control_access
@@ -56,7 +57,7 @@ class people::href {
     include vagrant
 
     vagrant::plugin { 'vagrant-vmware-fusion':
-        license => "puppet:///modules/people/${github}/licenses/vagrant.lic"
+        license => "${userfiles}/licenses/vagrant.lic"
     }
     
     # sublime text
@@ -108,4 +109,19 @@ class people::href {
     # python
     include python
     include python::virtualenvwrapper
+
+    # virtualenvwrapper postactivate
+    file { "${home}/.virtualenvs" :
+        ensure => directory
+    } ->
+    file { "${home}/.virtualenvs/postactivate" : 
+        ensure => present,
+        source => "${userfiles}/postactivate",
+        mode   => '0775'
+    } ->
+    file { "${home}/.virtualenvs/postmkvirtualenv" :
+        ensure => present,
+        source => "${userfiles}/postmkvirtualenv",
+        mode   => '0775'
+    }
 }
