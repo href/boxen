@@ -68,4 +68,8 @@ class people::href {
     osx_chsh { $::boxen_user :
         shell => "/bin/zsh",
     }
+
+    # python
+    include python
+    include python::virtualenvwrapper
 }
