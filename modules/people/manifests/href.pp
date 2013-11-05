@@ -2,6 +2,7 @@ class people::href {
     include firefox
     include onepassword
     include dropbox
+    include wuala
     
     include sublime_text_2
     sublime_text_2::package { 'SublimeLinter' :
