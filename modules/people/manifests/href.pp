@@ -5,6 +5,20 @@ class people::href {
     $github = "href"
     $dotfiles = "${home}/.dotfiles"
 
+    # git config
+    git::config::global { 'user.email' :
+        value => 'denis@href.ch'
+    }
+    git::config::global { 'user.name' :
+        value => 'Denis Krienbühl'
+    }
+    git::config::global { 'color.ui' :
+        value => true
+    }
+    git::config::global { 'core.autocrlf' :
+        value => 'input'
+    }
+
     # core
     include firefox
     include onepassword
