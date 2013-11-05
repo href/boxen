@@ -28,6 +28,7 @@ class people::href {
     include spotify
     include chrome
     include ohmyzsh
+    include iterm2::stable
     
     # sublime text
     include sublime_text_2
@@ -61,6 +62,12 @@ class people::href {
     file { "${home}/.slate":
       ensure  => link,
       target  => "${dotfiles}/.slate",
+      require => Repository[$dotfiles]
+    }
+
+    file { "${home}/.pythonrc":
+      ensure  => link,
+      target  => "${dotfiles}/.pythonrc",
       require => Repository[$dotfiles]
     }
 
