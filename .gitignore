@@ -12,3 +12,4 @@
 /vendor/gems/
 /vendor/puppet/cache
 /vendor/puppet/source/*.tar.gz
+/modules/people/files/*/licenses/*

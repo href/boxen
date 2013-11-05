@@ -51,6 +51,13 @@ class people::href {
     include slate
     include hipchat
     include vmware_fusion
+
+    # vagrant
+    include vagrant
+
+    vagrant::plugin { 'vagrant-vmware-fusion':
+        license => "puppet:///modules/people/${github}/licenses/vagrant.lic"
+    }
     
     # sublime text
     include sublime_text_2

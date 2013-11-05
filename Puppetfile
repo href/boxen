@@ -69,6 +69,7 @@ github "iterm2",         "1.0.3"
 github "alfred",         "1.1.6"
 github "slate",          "1.0.0"
 github "hipchat",        "1.0.8"
+github "vagrant",        "3.0.0"
 
 # Unstable fixes, patches, development
 mod "onepassword", :git => "https://github.com/rtircher/puppet-onepassword.git", :ref => "master"
