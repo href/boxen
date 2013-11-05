@@ -5,6 +5,24 @@ class people::href {
     $github = "href"
     $dotfiles = "${home}/.dotfiles"
 
+    # osx config
+    include osx::global::enable_keyboard_control_access
+    include osx::global::expand_print_dialog
+    include osx::global::expand_save_dialog
+    include osx::global::disable_remote_control_ir_receiver
+
+    class { 'osx::global::natural_mouse_scrolling':
+        enabled => false
+    }
+
+    class { 'osx::global::key_repeat_rate':
+        rate => 2
+    }
+
+    class { 'osx::global::key_repeat_delay':
+        delay => 10
+    }
+
     # git config
     git::config::global { 'user.email' :
         value => 'denis@href.ch'
