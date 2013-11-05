@@ -50,6 +50,7 @@ class people::href {
     include alfred
     include slate
     include hipchat
+    include vmware_fusion
     
     # sublime text
     include sublime_text_2

@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/am/puppet-vmware_fusion.git
+  ref: master
+  sha: 482b14ad9e98b8c4cae2b95e95bed8184c3c2b21
+  specs:
+    vmware_fusion (0.0.1)
+
+GIT
   remote: https://github.com/rtircher/puppet-onepassword.git
   ref: master
   sha: 296da3451ded36470826956406bd73d6b58e690e
@@ -203,6 +210,7 @@ DEPENDENCIES
   stdlib (= 4.1.0)
   sublime_text_2 (= 1.1.2)
   sudo (= 1.0.0)
+  vmware_fusion (>= 0)
   wuala (= 0.0.1)
   xquartz (= 1.1.0)
 

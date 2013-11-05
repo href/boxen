@@ -72,3 +72,4 @@ github "hipchat",        "1.0.8"
 
 # Unstable fixes, patches, development
 mod "onepassword", :git => "https://github.com/rtircher/puppet-onepassword.git", :ref => "master"
+mod "vmware_fusion", :git => "https://github.com/am/puppet-vmware_fusion.git", :ref => "master"
