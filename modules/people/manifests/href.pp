@@ -29,6 +29,7 @@ class people::href {
     include chrome
     include ohmyzsh
     include iterm2::stable
+    include alfred
     
     # sublime text
     include sublime_text_2
