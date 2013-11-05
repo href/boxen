@@ -48,6 +48,7 @@ class people::href {
     include ohmyzsh
     include iterm2::stable
     include alfred
+    include slate
     
     # sublime text
     include sublime_text_2

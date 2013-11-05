@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/rtircher/puppet-onepassword.git
+  ref: master
+  sha: 296da3451ded36470826956406bd73d6b58e690e
+  specs:
+    onepassword (0.0.1)
+
 GITHUBTARBALL
   remote: boxen/puppet-alfred
   specs:
@@ -114,6 +121,11 @@ GITHUBTARBALL
     skype (1.0.6)
 
 GITHUBTARBALL
+  remote: boxen/puppet-slate
+  specs:
+    slate (1.0.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-spotify
   specs:
     spotify (1.0.1)
@@ -153,11 +165,6 @@ GITHUBTARBALL
   specs:
     stdlib (4.1.0)
 
-GITHUBTARBALL
-  remote: rtircher/puppet-onepassword
-  specs:
-    onepassword (1.0.2)
-
 DEPENDENCIES
   alfred (= 1.1.6)
   boxen (= 3.3.4)
@@ -176,7 +183,7 @@ DEPENDENCIES
   nginx (= 1.4.2)
   nodejs (= 3.3.0)
   ohmyzsh (= 0.0.1)
-  onepassword (= 1.0.2)
+  onepassword (>= 0)
   openssl (= 1.0.0)
   osx (= 2.0.0)
   phantomjs (= 2.0.2)
@@ -185,6 +192,7 @@ DEPENDENCIES
   repository (= 2.2.0)
   ruby (= 6.7.2)
   skype (= 1.0.6)
+  slate (= 1.0.0)
   spotify (= 1.0.1)
   stdlib (= 4.1.0)
   sublime_text_2 (= 1.1.2)

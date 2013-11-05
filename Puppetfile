@@ -57,7 +57,6 @@ github "xquartz",    "1.1.0"
 # https://github.com/boxen.
 github "firefox",        "1.1.4"
 github "sublime_text_2", "1.1.2"
-github "onepassword",    "1.0.2", :repo => "rtircher/puppet-onepassword"
 github "dropbox",        "1.1.2"
 github "wuala",          "0.0.1", :repo => "haelmy/puppet-wuala"
 github "skype",          "1.0.6"
@@ -68,3 +67,7 @@ github "osx",            "2.0.0"
 github "python",         "1.3.0"
 github "iterm2",         "1.0.3"
 github "alfred",         "1.1.6"
+github "slate",          "1.0.0"
+
+# Unstable fixes, patches, development
+mod "onepassword", :git => "https://github.com/rtircher/puppet-onepassword.git", :ref => "master"
