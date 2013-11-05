@@ -5,6 +5,7 @@ class people::href {
     include wuala
     include skype
     include spotify
+    include chrome
     
     include sublime_text_2
     sublime_text_2::package { 'SublimeLinter' :
