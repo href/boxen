@@ -53,6 +53,7 @@ class people::href {
     include slate
     include hipchat
     include vmware_fusion
+    include postgresql
 
     # user-scripts
     file { $userscripts :
