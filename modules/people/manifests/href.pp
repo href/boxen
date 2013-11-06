@@ -18,11 +18,11 @@ class people::href {
     }
 
     class { 'osx::global::key_repeat_rate':
-        rate => 2
+        rate => 0
     }
 
     class { 'osx::global::key_repeat_delay':
-        delay => 10
+        delay => 0
     }
 
     # git config
