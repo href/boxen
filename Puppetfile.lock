@@ -107,6 +107,11 @@ GITHUBTARBALL
     memcached (1.3.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-minecraft
+  specs:
+    minecraft (1.0.2)
+
+GITHUBTARBALL
   remote: boxen/puppet-nginx
   specs:
     nginx (1.4.2)
@@ -170,6 +175,11 @@ GITHUBTARBALL
   remote: boxen/puppet-spotify
   specs:
     spotify (1.0.1)
+
+GITHUBTARBALL
+  remote: boxen/puppet-steam
+  specs:
+    steam (1.0.1)
 
 GITHUBTARBALL
   remote: boxen/puppet-sublime_text_2
@@ -247,6 +257,7 @@ DEPENDENCIES
   keyremap4macbook (= 1.0.8)
   littlesnitch (>= 0)
   memcached (= 1.3.0)
+  minecraft (= 1.0.2)
   nginx (= 1.4.2)
   nodejs (= 3.3.0)
   ohmyzsh (= 0.0.1)
@@ -263,6 +274,7 @@ DEPENDENCIES
   slate (= 1.0.0)
   spotify (= 1.0.1)
   stdlib (= 4.1.0)
+  steam (= 1.0.1)
   sublime_text_2 (= 1.1.2)
   sudo (= 1.0.0)
   sysctl (= 1.0.0)

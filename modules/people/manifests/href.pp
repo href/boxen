@@ -59,6 +59,8 @@ class people::href {
     include memcached
     include textual
     include charles
+    include steam
+    include minecraft
 
     # key remappings
     include keyremap4macbook
