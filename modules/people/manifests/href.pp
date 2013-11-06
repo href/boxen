@@ -75,6 +75,19 @@ class people::href {
         ensure => directory
     }
 
+    # globally used ruby
+    $globalruby = '2.0.0'
+    class { 'ruby::global':
+        version => $globalruby
+    }
+
+    # gems
+    ruby::gem { "puppet-lint for ${globalruby}":
+        gem     => 'puppet-lint',
+        ruby    => $globalruby,
+        version => '~> 0.3.2'
+    }
+
     # sublime text syncing
     Class['dropbox'] ->
     Class['sublime_text_2'] ->
