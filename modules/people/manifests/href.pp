@@ -105,6 +105,9 @@ class people::href {
     sublime_text_2::package { 'SublimePuppet' :
         source => 'russCloak/SublimePuppet'
     }
+    sublime_text_2::package { 'Tomorrow Color Schemes' :
+        source => 'theymaybecoders/sublime-tomorrow-theme'
+    }
 
     # dotfiles
     repository { $dotfiles :

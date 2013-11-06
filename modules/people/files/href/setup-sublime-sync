@@ -32,13 +32,13 @@ else
 fi
 
 # Check that settings really exist on this computer
-if [ ! -e "$SOURCE/Packages/" ]; then
-        echo "Could not find $SOURCE/Settings/"
+if [ ! -e "$SOURCE/Packages/User" ]; then
+        echo "Could not find $SOURCE/User"
         exit 0
 fi
 
 # Detect that we don't try to install twice and screw up
-if [ -L "$SOURCE/Packages" ] ; then
+if [ -L "$SOURCE/Packages/User" ] ; then
         echo "Dropbox settings already symlinked"
         exit 0
 fi
@@ -53,23 +53,13 @@ fi
 if [ ! -e "$SYNC_FOLDER" ] ; then
         echo "Setting up Dropbox sync folder"
         
-        # Creating the folders in separated categories
-        mkdir -p "$SYNC_FOLDER/Installed Packages"
-        mkdir -p "$SYNC_FOLDER/Packages"
-        
-        # Copy the files into their respective folder
-        cp -r "$SOURCE/Installed Packages/" "$SYNC_FOLDER/Installed Packages"
-        cp -r "$SOURCE/Packages/" "$SYNC_FOLDER/Packages"
+        mkdir -p "$SYNC_FOLDER/Packages/"
+        mv "$SOURCE/Packages/User" "$SYNC_FOLDER/Packages/"
 fi
-
-# Now when settings are in Dropbox delete existing files
-rm -rf "$SOURCE/Installed Packages"
-rm -rf "$SOURCE/Packages"
 
 # Symlink settings folders from Drobox
 # The "Installed Packages" and "Packages" was never
 # created inside of Dropbox folder. These lines are not working.
 # Fixed to the correct folder.
 
-ln -s "$SYNC_FOLDER/Installed Packages" "$SOURCE/Installed Packages"
-ln -s "$SYNC_FOLDER/Packages" "$SOURCE/Packages"
+ln -s "$SYNC_FOLDER/Packages/User" "$SOURCE/Packages/"
