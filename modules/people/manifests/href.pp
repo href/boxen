@@ -5,6 +5,7 @@ class people::href {
     $github = "href"
     $dotfiles = "${home}/.dotfiles"
     $userfiles = "puppet:///modules/people/${github}"
+    $userscripts = "${home}/bin"
 
     # osx config
     include osx::global::enable_keyboard_control_access
@@ -52,6 +53,23 @@ class people::href {
     include slate
     include hipchat
     include vmware_fusion
+
+    # user-scripts
+    file { $userscripts :
+        ensure => directory
+    }
+
+    # sublime text syncing
+    Class['dropbox'] ->
+    Class['sublime_text_2'] ->
+    
+    file { "${userscripts}/setup-sublime-sync" :
+        ensure => present,
+        source => "${userfiles}/setup-sublime-sync",
+        mode   => '0770'
+    } ->
+    
+    exec { "${userscripts}/setup-sublime-sync" : }
 
     # vagrant
     include vagrant
