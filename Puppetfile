@@ -76,3 +76,4 @@ github "postgresql",     "2.1.0"
 # Unstable fixes, patches, development
 mod "onepassword", :git => "https://github.com/rtircher/puppet-onepassword.git", :ref => "master"
 mod "vmware_fusion", :git => "https://github.com/am/puppet-vmware_fusion.git", :ref => "master"
+mod "littlesnitch", :git => "https://github.com/guitsaru/puppet-littlesnitch", :ref => "master"

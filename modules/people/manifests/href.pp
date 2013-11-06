@@ -54,6 +54,7 @@ class people::href {
     include hipchat
     include vmware_fusion
     include postgresql
+    include littlesnitch
 
     # user-scripts
     file { $userscripts :
