@@ -2,7 +2,7 @@ class people::href {
 
     # variables
     $home = "/Users/${::boxen_user}"
-    $github = "href"
+    $github = 'href'
     $dotfiles = "${home}/.dotfiles"
     $userfiles = "puppet:///modules/people/${github}"
     $userscripts = "${home}/bin"
@@ -91,13 +91,13 @@ class people::href {
     # sublime text syncing
     Class['dropbox'] ->
     Class['sublime_text_2'] ->
-    
+
     file { "${userscripts}/setup-sublime-sync" :
         ensure => present,
         source => "${userfiles}/setup-sublime-sync",
         mode   => '0770'
     } ->
-    
+
     exec { "${userscripts}/setup-sublime-sync" : }
 
     # vagrant
@@ -106,7 +106,7 @@ class people::href {
     vagrant::plugin { 'vagrant-vmware-fusion':
         license => "${userfiles}/licenses/vagrant.lic"
     }
-    
+
     # sublime text
     include sublime_text_2
     sublime_text_2::package { 'SublimeLinter' :
@@ -120,6 +120,9 @@ class people::href {
     }
     sublime_text_2::package { 'Tomorrow Color Schemes' :
         source => 'theymaybecoders/sublime-tomorrow-theme'
+    }
+    sublime_text_2::package { 'Trimmer' :
+        source => 'jonlabelle/Trimmer'
     }
 
     # dotfiles
@@ -153,7 +156,7 @@ class people::href {
 
     # use zsh as default shell
     osx_chsh { $::boxen_user :
-        shell => "/bin/zsh",
+        shell => '/bin/zsh',
     }
 
     # python
@@ -164,7 +167,7 @@ class people::href {
     file { "${home}/.virtualenvs" :
         ensure => directory
     } ->
-    file { "${home}/.virtualenvs/postactivate" : 
+    file { "${home}/.virtualenvs/postactivate" :
         ensure => present,
         source => "${userfiles}/postactivate",
         mode   => '0775'
