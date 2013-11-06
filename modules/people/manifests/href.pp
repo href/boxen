@@ -75,6 +75,11 @@ class people::href {
         ensure => directory
     }
 
+    # homebrew packages
+    package { 'lynx' :
+        ensure => present
+    }
+
     # globally used ruby
     $globalruby = '2.0.0'
     class { 'ruby::global':
