@@ -73,6 +73,7 @@ github "vagrant",        "3.0.0"
 github "sysctl",         "1.0.0"
 github "postgresql",     "2.1.0"
 github "bartender",      "1.0.0", :repo => "erichkist/puppet-bartender"
+github "memcached",      "1.3.0"
 
 # Unstable fixes, patches, development
 mod "onepassword", :git => "https://github.com/rtircher/puppet-onepassword.git", :ref => "master"

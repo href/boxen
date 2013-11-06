@@ -56,6 +56,7 @@ class people::href {
     include postgresql
     include littlesnitch
     include bartender
+    include memcached
 
     # user-scripts
     file { $userscripts :
