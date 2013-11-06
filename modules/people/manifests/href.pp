@@ -58,6 +58,7 @@ class people::href {
     include bartender
     include memcached
     include textual
+    include charles
 
     # key remappings
     include keyremap4macbook

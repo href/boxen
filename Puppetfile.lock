@@ -13,6 +13,13 @@ GIT
     littlesnitch (0.0.1)
 
 GIT
+  remote: https://github.com/niclasnilsson/puppet-charles/
+  ref: a13d54c11183a06f3987a81c6ac9675709c5fe53
+  sha: a13d54c11183a06f3987a81c6ac9675709c5fe53
+  specs:
+    charles (0.0.1)
+
+GIT
   remote: https://github.com/rtircher/puppet-onepassword.git
   ref: master
   sha: 296da3451ded36470826956406bd73d6b58e690e
@@ -223,6 +230,7 @@ DEPENDENCIES
   alfred (= 1.1.6)
   bartender (= 1.0.0)
   boxen (= 3.3.4)
+  charles (>= 0)
   chrome (= 1.1.2)
   dnsmasq (= 1.0.0)
   dropbox (= 1.1.2)
