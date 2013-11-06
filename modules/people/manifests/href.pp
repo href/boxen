@@ -58,6 +58,16 @@ class people::href {
     include bartender
     include memcached
 
+    # key remappings
+    include keyremap4macbook
+    include keyremap4macbook::login_item
+
+    # remove the non-breaking spaces which ironically breaks code
+    keyremap4macbook::remap{ 'option_space_to_space': }
+
+    # have the IBM keyboard @ available
+    keyremap4macbook::remap { 'altgr_2_to_atmark': }
+
     # user-scripts
     file { $userscripts :
         ensure => directory
