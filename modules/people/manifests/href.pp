@@ -55,6 +55,7 @@ class people::href {
     include vmware_fusion
     include postgresql
     include littlesnitch
+    include bartender
 
     # user-scripts
     file { $userscripts :
