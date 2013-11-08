@@ -78,6 +78,7 @@ github "keyremap4macbook",  "1.0.8"
 github "textual",           "3.2.1"
 github "steam",             "1.0.1"
 github "minecraft",         "1.0.2"
+github "kaleidoscope",      "1.0.3", :repo => "ngs/puppet-kaleidoscope"
 
 # Unstable fixes, patches, development
 mod "onepassword", :git => "https://github.com/rtircher/puppet-onepassword.git", :ref => "master"

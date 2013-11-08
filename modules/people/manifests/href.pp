@@ -61,6 +61,7 @@ class people::href {
     include charles
     include steam
     include minecraft
+    include kaleidoscope
 
     # key remappings
     include keyremap4macbook
