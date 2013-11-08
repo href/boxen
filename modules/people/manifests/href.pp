@@ -78,7 +78,11 @@ class people::href {
     }
 
     # homebrew packages
-    package { 'lynx' :
+    $homebrew_packages = [
+        'lynx',
+        'lftp'
+    ]
+    package { $homebrew_packages :
         ensure => present
     }
 
