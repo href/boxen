@@ -184,4 +184,14 @@ class people::href {
         source => "${userfiles}/postmkvirtualenv",
         mode   => '0775'
     }
+
+    # cronjobs
+    file { "${home}/Minecraft" :
+        ensure => directory
+    } ->
+    cron { 'daily minecraft backup' :
+        hour   => '10',
+        minute => '0',
+        command => "${userscripts}/minecraft-backup"
+    }
 }
