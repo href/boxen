@@ -76,6 +76,12 @@ class people::href {
     # user-scripts
     file { $userscripts :
         ensure => directory
+    } ->
+
+    file { "${userscripts}/plone-extract" :
+        ensure => present,
+        source => "${userfiles}/plone-extract",
+        mode   => '0770'
     }
 
     # homebrew packages

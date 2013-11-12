@@ -1,0 +1,19 @@
+#!/bin/bash
+
+domain="$1"
+
+if [ -n "$domain" ]; then
+    echo 'downloading remote backup'
+    scp $domain:transfer.tar.gz ./transfer.tar.gz
+fi
+
+echo 'removing local files'
+rm -rf ./var
+
+echo 'extracting new files'
+tar xzvf transfer.tar.gz
+
+echo 'adding zope user'
+bin/instance adduser zope zope
+
+echo 'done'
