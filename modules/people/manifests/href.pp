@@ -61,7 +61,11 @@ class people::href {
     include charles
     include steam
     include minecraft
-    include kaleidoscope
+    
+    # let kaleidoscope handle the .gitconfig
+    class { 'kaleidoscope':
+        make_default => false,
+    }
 
     # key remappings
     include keyremap4macbook
