@@ -138,6 +138,9 @@ class people::href {
     sublime_text_2::package { 'Trimmer' :
         source => 'jonlabelle/Trimmer'
     }
+    sublime_text_2::package { 'Syntax Highlighting for Sass' :
+        source => 'P233/Syntax-highlighting-for-Sass'
+    }
 
     # dotfiles
     repository { $dotfiles :
