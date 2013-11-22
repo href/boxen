@@ -131,6 +131,8 @@ class people::href {
         license => "${userfiles}/licenses/vagrant.lic"
     }
 
+    vagrant::plugin { 'vagrant-multiprovider-snap' : }
+
     # sublime text
     include sublime_text_2
     sublime_text_2::package { 'SublimeLinter' :
