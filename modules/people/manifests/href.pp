@@ -111,10 +111,6 @@ class people::href {
         ruby    => $globalruby,
         version => '~> 0.3.2'
     }
-    ruby::gem { 'less':
-        gem     => 'less',
-        ruby    => $globalruby
-    }
 
     # sublime text syncing
     Class['dropbox'] ->
