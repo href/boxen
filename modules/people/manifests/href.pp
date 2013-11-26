@@ -93,7 +93,8 @@ class people::href {
         'lynx',
         'lftp',
         'libjpeg',
-        'libpng'
+        'libpng',
+        'ghi'
     ]
     package { $homebrew_packages :
         ensure => present
