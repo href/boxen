@@ -90,11 +90,12 @@ class people::href {
 
     # homebrew packages
     $homebrew_packages = [
-        'lynx',
+        'ghi',
         'lftp',
         'libjpeg',
+        'libmagic',
         'libpng',
-        'ghi'
+        'lynx',
     ]
     package { $homebrew_packages :
         ensure => present
