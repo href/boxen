@@ -58,7 +58,7 @@ class people::href {
     include bartender
     include memcached
     include textual
-    include charles
+    #include charles
     include steam
     include minecraft
     

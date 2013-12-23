@@ -6,18 +6,18 @@ GIT
     vmware_fusion (0.0.1)
 
 GIT
+  remote: https://github.com/boxen/puppet-charles/
+  ref: bce690fed15c4bfa1e384493655fee9127206a89
+  sha: bce690fed15c4bfa1e384493655fee9127206a89
+  specs:
+    charles (0.0.1)
+
+GIT
   remote: https://github.com/guitsaru/puppet-littlesnitch
   ref: master
   sha: d0632aae7f7b93d1f1b27e3966351fceefa6ec12
   specs:
     littlesnitch (0.0.1)
-
-GIT
-  remote: https://github.com/niclasnilsson/puppet-charles/
-  ref: a13d54c11183a06f3987a81c6ac9675709c5fe53
-  sha: a13d54c11183a06f3987a81c6ac9675709c5fe53
-  specs:
-    charles (0.0.1)
 
 GIT
   remote: https://github.com/rtircher/puppet-onepassword.git
