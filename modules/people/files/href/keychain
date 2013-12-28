@@ -1,0 +1,30 @@
+#!/usr/bin/python
+import re
+import commands
+
+
+def get_keychain_pass(account=None, server=None):
+    params = {
+        'security': '/usr/bin/security',
+        'command':  'find-internet-password',
+        'account':  account,
+        'server':   server
+    }
+
+    command = (
+        "%(security)s %(command)s -g -a %(account)s -s %(server)s" % params
+    )
+    outtext = commands.getoutput(command)
+
+    if 'The specified item could not be found' in outtext:
+        print
+        print "%s -> %s must first be added to the keychain." % (
+            account, server
+        )
+        print "Use 'internet password' by adding a https:// in front of"
+        print "%s in the first field or it won't work" % server
+        print
+
+        raise KeyError('Not found in keychain')
+
+    return re.match(r'password: "(.*)"', outtext).group(1)

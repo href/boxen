@@ -6,6 +6,7 @@ class people::href {
     $dotfiles = "${home}/.dotfiles"
     $userfiles = "puppet:///modules/people/${github}"
     $userscripts = "${home}/bin"
+    $logs = "${home}/Logs"
 
     # osx config
     include osx::global::enable_keyboard_control_access
@@ -86,6 +87,12 @@ class people::href {
         ensure => present,
         source => "${userfiles}/plone-extract",
         mode   => '0770'
+    } ->
+
+    file { "${userscripts}/keychain" :
+        ensure => present,
+        source => "${userfiles}/keychain",
+        mode   => '0770'
     }
 
     # homebrew packages
@@ -96,6 +103,7 @@ class people::href {
         'libmagic',
         'libpng',
         'lynx',
+        'offlineimap'
     ]
     package { $homebrew_packages :
         ensure => present
@@ -162,31 +170,32 @@ class people::href {
     # dotfiles
     repository { $dotfiles :
         source => "${github}/dotfiles"
-    }
+    } ->
 
     file { "${home}/.zshrc":
-      ensure  => link,
-      target  => "${dotfiles}/.zshrc",
-      require => Repository[$dotfiles]
-    }
+        ensure  => link,
+        target  => "${dotfiles}/.zshrc"
+    } ->
 
     file { "${home}/.vimrc":
-      ensure  => link,
-      target  => "${dotfiles}/.vimrc",
-      require => Repository[$dotfiles]
-    }
+        ensure  => link,
+        target  => "${dotfiles}/.vimrc",
+    } ->
 
     file { "${home}/.slate":
-      ensure  => link,
-      target  => "${dotfiles}/.slate",
-      require => Repository[$dotfiles]
-    }
+        ensure  => link,
+        target  => "${dotfiles}/.slate",
+    } ->
 
     file { "${home}/.pythonrc":
-      ensure  => link,
-      target  => "${dotfiles}/.pythonrc",
-      require => Repository[$dotfiles]
-    }
+        ensure  => link,
+        target  => "${dotfiles}/.pythonrc",
+    } ->
+
+    file { "${home}/.offlineimaprc":
+        ensure  => link,
+        target  => "${dotfiles}/.offlineimaprc",
+    } ->
 
     # use zsh as default shell
     osx_chsh { $::boxen_user :
@@ -215,10 +224,33 @@ class people::href {
     # cronjobs
     file { "${home}/Minecraft" :
         ensure => directory
-    } ->
-    cron { 'daily minecraft backup' :
-        hour   => '10',
-        minute => '0',
-        command => "${userscripts}/minecraft-backup"
+    }
+
+    # logs
+    file { $logs :
+        ensure => directory
+    }
+
+    case $::hostname {
+        'home': {
+            cron { 'daily minecraft backup' :
+                hour    => '19',
+                minute  => '0',
+                command => "${userscripts}/minecraft-backup > ${logs}/minecraft-backup.log"
+            }
+            cron { 'daily mail backup' :
+                hour    => '19',
+                minute  => '30',
+                command => "offlineimap > ${logs}/mail-backup.log"
+            }
+        }
+        'dk': {
+            cron { 'daily minecraft backup' :
+                hour   => '10',
+                minute => '0',
+                command => "${userscripts}/minecraft-backup > ${logs}/minecraft-backup.log"
+            }
+        }
+
     }
 }
