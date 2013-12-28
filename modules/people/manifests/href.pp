@@ -236,19 +236,22 @@ class people::href {
             cron { 'daily minecraft backup' :
                 hour    => '19',
                 minute  => '0',
-                command => "${userscripts}/minecraft-backup > ${logs}/minecraft-backup.log"
+                command => "${userscripts}/minecraft-backup",
+                user    => denis
             }
             cron { 'daily mail backup' :
                 hour    => '19',
                 minute  => '30',
-                command => "offlineimap > ${logs}/mail-backup.log"
+                command => "offlineimap > ${logs}/mail-backup.log",
+                user    => denis
             }
         }
         'dk': {
             cron { 'daily minecraft backup' :
-                hour   => '10',
-                minute => '0',
-                command => "${userscripts}/minecraft-backup > ${logs}/minecraft-backup.log"
+                hour    => '10',
+                minute  => '0',
+                command => "${userscripts}/minecraft-backup",
+                user    => denis
             }
         }
 
