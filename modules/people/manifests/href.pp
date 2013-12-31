@@ -166,6 +166,9 @@ class people::href {
     sublime_text_2::package { 'Robot Framework' :
         source => 'shellderp/sublime-robot-plugin'
     }
+    sublime_text_2::package { 'Theme - Spacegray' :
+        source => 'kkga/spacegray'
+    }
 
     # dotfiles
     repository { $dotfiles :
