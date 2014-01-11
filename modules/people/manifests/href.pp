@@ -103,7 +103,8 @@ class people::href {
         'libmagic',
         'libpng',
         'lynx',
-        'offlineimap'
+        'offlineimap',
+        'aria2'
     ]
     package { $homebrew_packages :
         ensure => present
