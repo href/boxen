@@ -169,6 +169,9 @@ class people::href {
     sublime_text_2::package { 'Theme - Spacegray' :
         source => 'kkga/spacegray'
     }
+    sublime_text_2::package { 'Dictionaries' :
+        source => 'SublimeText/Dictionaries'
+    }
 
     # dotfiles
     repository { $dotfiles :
