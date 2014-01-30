@@ -178,36 +178,42 @@ class people::href {
         source => "${github}/dotfiles"
     } ->
 
-    file { "${home}/.zshrc":
+    file { "${home}/.zshrc" :
         ensure => link,
         target => "${dotfiles}/.zshrc"
     } ->
 
-    file { "${home}/.vimrc":
+    file { "${home}/.vimrc" :
         ensure => link,
         target => "${dotfiles}/.vimrc",
     } ->
 
-    file { "${home}/.slate":
+    file { "${home}/.slate" :
         ensure => link,
         target => "${dotfiles}/.slate",
     } ->
 
-    file { "${home}/.pythonrc":
+    file { "${home}/.pythonrc" :
         ensure => link,
         target => "${dotfiles}/.pythonrc",
     } ->
 
-    file { "${home}/.offlineimaprc":
+    file { "${home}/.offlineimaprc" :
         ensure => link,
         target => "${dotfiles}/.offlineimaprc",
+    } ->
+
+    file { "${home}/.pdbrc" :
+        ensure => link,
+        target => "${dotfiles}/.pdbrc"
     } ->
 
     # buildout defaults
     file { [
         "${home}/.buildout",
         "${home}/.buildout/extends",
-        "${home}/.buildout/downloads"
+        "${home}/.buildout/downloads",
+        "${home}/.buildout/eggs"
     ] :
         ensure => directory
     } ->
