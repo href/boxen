@@ -208,6 +208,11 @@ class people::href {
         target => "${dotfiles}/.pdbrc"
     } ->
 
+    file { "${home}/.pdbrc.py" :
+        ensure => link,
+        target => "${dotfiles}/.pdbrc.py"
+    } ->    
+
     # buildout defaults
     file { [
         "${home}/.buildout",
