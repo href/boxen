@@ -13,6 +13,9 @@ rm -rf ./var
 echo 'extracting new files'
 tar xzvf transfer.tar.gz
 
+echo 'correcting mode setting'
+chmod 700 var/blobstorage
+
 echo 'adding zope user'
 bin/instance adduser zope zope
 
