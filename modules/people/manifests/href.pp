@@ -179,29 +179,42 @@ class people::href {
     } ->
 
     file { "${home}/.zshrc":
-        ensure  => link,
-        target  => "${dotfiles}/.zshrc"
+        ensure => link,
+        target => "${dotfiles}/.zshrc"
     } ->
 
     file { "${home}/.vimrc":
-        ensure  => link,
-        target  => "${dotfiles}/.vimrc",
+        ensure => link,
+        target => "${dotfiles}/.vimrc",
     } ->
 
     file { "${home}/.slate":
-        ensure  => link,
-        target  => "${dotfiles}/.slate",
+        ensure => link,
+        target => "${dotfiles}/.slate",
     } ->
 
     file { "${home}/.pythonrc":
-        ensure  => link,
-        target  => "${dotfiles}/.pythonrc",
+        ensure => link,
+        target => "${dotfiles}/.pythonrc",
     } ->
 
     file { "${home}/.offlineimaprc":
-        ensure  => link,
-        target  => "${dotfiles}/.offlineimaprc",
+        ensure => link,
+        target => "${dotfiles}/.offlineimaprc",
     } ->
+
+    # buildout defaults
+    file { [
+        "${home}/.buildout",
+        "${home}/.buildout/extends",
+        "${home}/.buildout/downloads"
+    ] :
+        ensure => directory
+    } ->
+    file { "${home}/.buildout/default.cfg" :
+        ensure => link,
+        target => "${dotfiles}/default.cfg"
+    }
 
     # use zsh as default shell
     osx_chsh { $::boxen_user :
