@@ -105,7 +105,8 @@ class people::href {
         'lynx',
         'offlineimap',
         'aria2',
-        'go'
+        'go',
+        'docker'
     ]
     package { $homebrew_packages :
         ensure => present
