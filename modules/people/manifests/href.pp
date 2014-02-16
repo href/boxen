@@ -173,6 +173,8 @@ class people::href {
     }
     sublime_text_2::package { 'GoSublime' :
         source => 'DisposaBoy/GoSublime'
+    sublime_text_2::package { 'Dictionaries' :
+        source => 'SublimeText/Dictionaries'
     }
 
     # dotfiles
@@ -180,30 +182,54 @@ class people::href {
         source => "${github}/dotfiles"
     } ->
 
-    file { "${home}/.zshrc":
-        ensure  => link,
-        target  => "${dotfiles}/.zshrc"
+    file { "${home}/.zshrc" :
+        ensure => link,
+        target => "${dotfiles}/.zshrc"
     } ->
 
-    file { "${home}/.vimrc":
-        ensure  => link,
-        target  => "${dotfiles}/.vimrc",
+    file { "${home}/.vimrc" :
+        ensure => link,
+        target => "${dotfiles}/.vimrc",
     } ->
 
-    file { "${home}/.slate":
-        ensure  => link,
-        target  => "${dotfiles}/.slate",
+    file { "${home}/.slate" :
+        ensure => link,
+        target => "${dotfiles}/.slate",
     } ->
 
-    file { "${home}/.pythonrc":
-        ensure  => link,
-        target  => "${dotfiles}/.pythonrc",
+    file { "${home}/.pythonrc" :
+        ensure => link,
+        target => "${dotfiles}/.pythonrc",
     } ->
 
-    file { "${home}/.offlineimaprc":
-        ensure  => link,
-        target  => "${dotfiles}/.offlineimaprc",
+    file { "${home}/.offlineimaprc" :
+        ensure => link,
+        target => "${dotfiles}/.offlineimaprc",
     } ->
+
+    file { "${home}/.pdbrc" :
+        ensure => link,
+        target => "${dotfiles}/.pdbrc"
+    } ->
+
+    file { "${home}/.pdbrc.py" :
+        ensure => link,
+        target => "${dotfiles}/.pdbrc.py"
+    } ->    
+
+    # buildout defaults
+    file { [
+        "${home}/.buildout",
+        "${home}/.buildout/extends",
+        "${home}/.buildout/downloads",
+        "${home}/.buildout/eggs"
+    ] :
+        ensure => directory
+    } ->
+    file { "${home}/.buildout/default.cfg" :
+        ensure => link,
+        target => "${dotfiles}/default.cfg"
+    }
 
     # use zsh as default shell
     osx_chsh { $::boxen_user :
