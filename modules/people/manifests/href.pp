@@ -103,7 +103,9 @@ class people::href {
         'libmagic',
         'libpng',
         'lynx',
-        'offlineimap'
+        'offlineimap',
+        'aria2',
+        'go'
     ]
     package { $homebrew_packages :
         ensure => present
@@ -169,6 +171,8 @@ class people::href {
     sublime_text_2::package { 'Theme - Spacegray' :
         source => 'kkga/spacegray'
     }
+    sublime_text_2::package { 'GoSublime' :
+        source => 'DisposaBoy/GoSublime'
     sublime_text_2::package { 'Dictionaries' :
         source => 'SublimeText/Dictionaries'
     }
