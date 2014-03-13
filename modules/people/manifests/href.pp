@@ -173,6 +173,7 @@ class people::href {
     }
     sublime_text_2::package { 'GoSublime' :
         source => 'DisposaBoy/GoSublime'
+    }
     sublime_text_2::package { 'Dictionaries' :
         source => 'SublimeText/Dictionaries'
     }
