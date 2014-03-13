@@ -172,6 +172,9 @@ class people::href {
     sublime_text_2::package { 'Dictionaries' :
         source => 'SublimeText/Dictionaries'
     }
+    sublime_text_2::package { 'Dockerfile Syntax Highlighting' :
+        source => 'asbjornenge/Dockerfile.tmLanguage'
+    }
 
     # dotfiles
     repository { $dotfiles :
