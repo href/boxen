@@ -1,17 +1,24 @@
 #!/bin/bash
 
 domain="$1"
+project="$2"
+
+cwd=`pwd`
 
 if [ -n "$domain" ]; then
-    echo 'downloading remote backup'
-    scp $domain:transfer.tar.gz ./transfer.tar.gz
+    if [ -n "$project" ]; then
+        echo "acquiring $project from $domain"
+        ~/.virtualenvs/puppet/bin/puppeteer transfer "$domain" "/home/$project/plone/var" --destination "$cwd/$project.tar.gz"
+    fi
 fi
+
+cd $cwd
 
 echo 'removing local files'
 rm -rf ./var
 
 echo 'extracting new files'
-tar xzvf transfer.tar.gz
+tar xzvf "$project.tar.gz"
 
 echo 'correcting mode setting'
 chmod 700 var/blobstorage
