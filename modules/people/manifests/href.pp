@@ -114,9 +114,9 @@ class people::href {
 
     # globally used ruby
     $globalruby = '2.0.0'
-    # class { 'ruby::global':
-    #     version => $globalruby
-    # }
+    class { 'ruby::global':
+        version => $globalruby
+    }
 
     # gems
     ruby::gem { "puppet-lint for ${globalruby}":
