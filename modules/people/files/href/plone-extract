@@ -1,14 +1,16 @@
 #!/bin/bash
 
-domain="$1"
-project="$2"
+project="$1"
+domain="$2"
 
 cwd=`pwd`
+
+mkdir -p "$cwd/temp"
 
 if [ -n "$domain" ]; then
     if [ -n "$project" ]; then
         echo "acquiring $project from $domain"
-        ~/.virtualenvs/puppet/bin/puppeteer transfer "$domain" "/home/$project/plone/var" --destination "$cwd/$project.tar.gz"
+        ~/.virtualenvs/puppet/bin/puppeteer archive "$domain:/home/$project/plone/var" "$cwd/temp/$project.tar.gz"
     fi
 fi
 
@@ -18,12 +20,15 @@ echo 'removing local files'
 rm -rf ./var
 
 echo 'extracting new files'
-tar xzvf "$project.tar.gz"
+tar xzvf "temp/$project.tar.gz"
 
 echo 'correcting mode setting'
 chmod 700 var/blobstorage
 
 echo 'adding zope user'
 bin/instance adduser zope zope
+
+echo 'setup test-email'
+bin/instance run ~/Code/onegov/parts/omelette/seantis/plonetools/scripts/configure-email.py localhost 1025 '' '' Test test@example.org
 
 echo 'done'
