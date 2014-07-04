@@ -51,7 +51,6 @@ class people::href {
     include ohmyzsh
     include iterm2::stable
     include alfred
-    include slate
     include hipchat
     include vmware_fusion
     include postgresql
@@ -59,9 +58,10 @@ class people::href {
     include bartender
     include memcached
     include textual
-    #include charles
+    include charles
     include steam
     include minecraft
+    include brewcask
     
     # let kaleidoscope handle the .gitconfig
     class { 'kaleidoscope':
@@ -95,7 +95,7 @@ class people::href {
         mode   => '0770'
     }
 
-    # homebrew packages
+    # packages
     $homebrew_packages = [
         'ghi',
         'lftp',
@@ -108,8 +108,17 @@ class people::href {
         'go',
         'docker'
     ]
+
+    $cask_packages = [
+        'hydra'
+    ]
+
     package { $homebrew_packages :
         ensure => present
+    }
+
+    package { $cask_packages :
+        provider => 'brewcask'
     }
 
     # globally used ruby
@@ -197,9 +206,9 @@ class people::href {
         target => "${dotfiles}/.vimrc",
     } ->
 
-    file { "${home}/.slate" :
+    file { "${home}/.hydra" :
         ensure => link,
-        target => "${dotfiles}/.slate",
+        target => "${dotfiles}/.hydra",
     } ->
 
     file { "${home}/.pythonrc" :

@@ -85,4 +85,4 @@ github "kaleidoscope",      "1.0.5", :repo => "ngs/puppet-kaleidoscope"
 github "onepassword",       "1.0.2", :repo => "rtircher/puppet-onepassword"
 github "vmware_fusion",     "1.0.1", :repo => "am/puppet-vmware_fusion"
 github "charles",           "1.0.4"
-
+github "brewcask",          "0.0.3", :repo => "phinze/puppet-brewcask"
