@@ -109,9 +109,7 @@ class people::href {
         'docker'
     ]
 
-    $cask_packages = [
-        'hydra'
-    ]
+    $cask_packages = []
 
     package { $homebrew_packages :
         ensure => present
