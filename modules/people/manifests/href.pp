@@ -188,6 +188,9 @@ class people::href {
     sublime_text_2::package { 'Dockerfile Syntax Highlighting' :
         source => 'asbjornenge/Dockerfile.tmLanguage'
     }
+    sublime_text_2::package { 'Lispindent' : 
+        source => 'odyssomay/sublime-lispindent'
+    }
 
     # dotfiles
     repository { $dotfiles :
