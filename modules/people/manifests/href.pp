@@ -186,6 +186,12 @@ class people::href {
     sublime_text_2::package { 'Lispindent' : 
         source => 'odyssomay/sublime-lispindent'
     }
+    sublime_text_2::package { 'Scheme' : 
+        source => 'egrachev/sublime-scheme'
+    }
+    sublime_text_2::package { 'Sublime REPL' :
+        source => 'wuub/SublimeREPL'
+    }
 
     # dotfiles
     repository { $dotfiles :
