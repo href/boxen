@@ -6,7 +6,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-alfred
   specs:
-    alfred (1.1.8)
+    alfred (1.2.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-boxen
@@ -36,7 +36,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-firefox
   specs:
-    firefox (1.2.0)
+    firefox (1.2.1)
 
 GITHUBTARBALL
   remote: boxen/puppet-foreman
@@ -61,7 +61,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-hipchat
   specs:
-    hipchat (1.1.2)
+    hipchat (1.1.3)
 
 GITHUBTARBALL
   remote: boxen/puppet-homebrew
@@ -76,7 +76,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-iterm2
   specs:
-    iterm2 (1.0.9)
+    iterm2 (1.1.2)
 
 GITHUBTARBALL
   remote: boxen/puppet-karabiner
@@ -111,7 +111,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-osx
   specs:
-    osx (2.5.0)
+    osx (2.7.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-phantomjs
@@ -149,11 +149,6 @@ GITHUBTARBALL
     skype (1.0.8)
 
 GITHUBTARBALL
-  remote: boxen/puppet-slate
-  specs:
-    slate (1.0.0)
-
-GITHUBTARBALL
   remote: boxen/puppet-spotify
   specs:
     spotify (1.0.1)
@@ -186,7 +181,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-vagrant
   specs:
-    vagrant (3.0.7)
+    vagrant (3.1.1)
 
 GITHUBTARBALL
   remote: boxen/puppet-xquartz
@@ -216,7 +211,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: phinze/puppet-brewcask
   specs:
-    brewcask (0.0.3)
+    brewcask (0.0.4)
 
 GITHUBTARBALL
   remote: puppetlabs/puppetlabs-inifile
@@ -239,24 +234,24 @@ GITHUBTARBALL
     onepassword (1.0.2)
 
 DEPENDENCIES
-  alfred (= 1.1.8)
+  alfred (= 1.2.0)
   bartender (= 1.0.0)
   boxen (= 3.6.2)
-  brewcask (= 0.0.3)
+  brewcask (= 0.0.4)
   charles (= 1.0.4)
   chrome (= 1.1.2)
   dnsmasq (= 1.0.1)
   dropbox (= 1.2.0)
-  firefox (= 1.2.0)
+  firefox (= 1.2.1)
   foreman (= 1.2.0)
   gcc (= 2.1.1)
   git (= 2.5.0)
   go (= 1.1.0)
-  hipchat (= 1.1.2)
+  hipchat (= 1.1.3)
   homebrew (= 1.9.4)
   hub (= 1.3.0)
   inifile (= 1.0.3)
-  iterm2 (= 1.0.9)
+  iterm2 (= 1.1.2)
   kaleidoscope (= 1.0.5)
   karabiner (= 1.0.4)
   memcached (= 2.0.0)
@@ -267,7 +262,7 @@ DEPENDENCIES
   ohmyzsh (= 0.0.1)
   onepassword (= 1.0.2)
   openssl (= 1.0.0)
-  osx (= 2.5.0)
+  osx (= 2.7.0)
   phantomjs (= 2.3.0)
   pkgconfig (= 1.0.0)
   postgresql (= 3.0.1)
@@ -275,7 +270,6 @@ DEPENDENCIES
   repository (= 2.3.0)
   ruby (= 8.1.2)
   skype (= 1.0.8)
-  slate (= 1.0.0)
   spotify (= 1.0.1)
   stdlib (= 4.2.1)
   steam (= 1.0.1)
@@ -283,7 +277,8 @@ DEPENDENCIES
   sudo (= 1.0.0)
   sysctl (= 1.0.1)
   textual (= 4.1.5)
-  vagrant (= 3.0.7)
+  vagrant (= 3.1.1)
   vmware_fusion (= 1.0.1)
   wuala (= 0.0.1)
   xquartz (= 1.1.1)
+

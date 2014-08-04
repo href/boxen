@@ -126,10 +126,10 @@ class people::href {
     }
 
     # gems
-    ruby::gem { "puppet-lint for ${globalruby}":
-        gem     => 'puppet-lint',
-        ruby    => $globalruby,
-        version => '~> 0.3.2'
+    ruby_gem { "puppet-lint for ${globalruby}":
+        gem             => 'puppet-lint',
+        ruby_version    => $globalruby,
+        version         => '~> 0.3.2'
     }
 
     # sublime text syncing
