@@ -146,11 +146,6 @@ class people::href {
 
     # vagrant
     include vagrant
-
-    vagrant::plugin { 'vagrant-vmware-fusion':
-        license => "${userfiles}/licenses/vagrant.lic"
-    }
-
     vagrant::plugin { 'vagrant-multiprovider-snap' : }
 
     # sublime text
