@@ -79,9 +79,9 @@ GITHUBTARBALL
     iterm2 (1.0.9)
 
 GITHUBTARBALL
-  remote: boxen/puppet-keyremap4macbook
+  remote: boxen/puppet-karabiner
   specs:
-    keyremap4macbook (1.2.2)
+    karabiner (1.0.4)
 
 GITHUBTARBALL
   remote: boxen/puppet-memcached
@@ -258,7 +258,7 @@ DEPENDENCIES
   inifile (= 1.0.3)
   iterm2 (= 1.0.9)
   kaleidoscope (= 1.0.5)
-  keyremap4macbook (= 1.2.2)
+  karabiner (= 1.0.4)
   memcached (= 2.0.0)
   minecraft (= 1.0.2)
   module-data (= 0.0.3)

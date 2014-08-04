@@ -69,14 +69,14 @@ class people::href {
     }
 
     # key remappings
-    include keyremap4macbook
-    include keyremap4macbook::login_item
+    include karabiner
+    include karabiner::login_item
 
     # remove the non-breaking spaces which ironically breaks code
-    keyremap4macbook::remap{ 'option_space_to_space': }
+    karabiner::remap{ 'option_space_to_space': }
 
     # have the IBM keyboard @ available
-    keyremap4macbook::remap { 'altgr_2_to_atmark': }
+    karabiner::remap { 'altgr_2_to_atmark': }
 
     # user-scripts
     file { $userscripts :
