@@ -189,6 +189,9 @@ class people::href {
     sublime_text_2::package { 'Jinja2' : 
         source => 'mitsuhiko/jinja2-tmbundle'
     }
+    sublime_text_2::package { 'Scheme' : 
+        source => 'egrachev/sublime-scheme'
+    }
 
     # dotfiles
     repository { $dotfiles :
