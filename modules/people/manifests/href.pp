@@ -186,6 +186,9 @@ class people::href {
     sublime_text_2::package { 'Lispindent' : 
         source => 'odyssomay/sublime-lispindent'
     }
+    sublime_text_2::package { 'Jinja2' : 
+        source => 'mitsuhiko/jinja2-tmbundle'
+    }
 
     # dotfiles
     repository { $dotfiles :
