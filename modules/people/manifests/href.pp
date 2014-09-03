@@ -97,16 +97,17 @@ class people::href {
 
     # packages
     $homebrew_packages = [
+        'aria2',
+        'docker',
         'ghi',
+        'go',
         'lftp',
         'libjpeg',
         'libmagic',
         'libpng',
         'lynx',
         'offlineimap',
-        'aria2',
-        'go',
-        'docker'
+        'packer',
     ]
 
     $cask_packages = []
