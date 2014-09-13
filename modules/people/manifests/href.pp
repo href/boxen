@@ -293,7 +293,7 @@ class people::href {
             cron { 'daily mail backup' :
                 hour    => '19',
                 minute  => '30',
-                command => "offlineimap > ${logs}/mail-backup.log",
+                command => "/opt/boxen/homebrew/bin/offlineimap > ${logs}/mail-backup.log",
                 user    => denis
             }
         }
