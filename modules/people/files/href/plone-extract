@@ -10,7 +10,7 @@ mkdir -p "$cwd/temp"
 if [ -n "$domain" ]; then
     if [ -n "$project" ]; then
         echo "acquiring $project from $domain"
-        ~/.virtualenvs/puppet/bin/puppeteer archive "$domain:/home/$project/plone/var" "$cwd/temp/$project.tar.gz"
+        puppeteer archive "$domain:/home/$project/plone/var" "$cwd/temp/$project.tar.gz"
     fi
 fi
 
