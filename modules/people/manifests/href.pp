@@ -196,6 +196,9 @@ class people::href {
     sublime_text_2::package { 'Rust' :
         source => 'jhasse/sublime-rust'
     }
+    sublime_text_2::package { 'TOML' : 
+        source => 'lmno/TOML'
+    }
 
     # dotfiles
     repository { $dotfiles :
