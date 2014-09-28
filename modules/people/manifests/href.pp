@@ -193,6 +193,9 @@ class people::href {
     sublime_text_2::package { 'Scheme' : 
         source => 'egrachev/sublime-scheme'
     }
+    sublime_text_2::package { 'Rust' :
+        source => 'jhasse/sublime-rust'
+    }
 
     # dotfiles
     repository { $dotfiles :
