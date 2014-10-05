@@ -8,12 +8,14 @@ def get_keychain_pass(account=None, server=None):
         'security': '/usr/bin/security',
         'command':  'find-internet-password',
         'account':  account,
-        'server':   server
+        'server':   server,
+        'keychain': '/Users/denis/Library/Keychains/login.keychain',
     }
 
     command = (
-        "%(security)s %(command)s -g -a %(account)s -s %(server)s" % params
-    )
+        "sudo -u denis %(security)s -v %(command)s -g -a %(account)s "
+        "-s %(server)s %(keychain)s | grep 'password:'"
+    ) % params
     outtext = commands.getoutput(command)
 
     if 'The specified item could not be found' in outtext:
@@ -27,4 +29,9 @@ def get_keychain_pass(account=None, server=None):
 
         raise KeyError('Not found in keychain')
 
-    return re.match(r'password: "(.*)"', outtext).group(1)
+    pw = re.compile(r'password: "(.*)"')
+
+    matches = (pw.match(line) for line in outtext.split('\n'))
+    match = (m for m in matches if m is not None).next()
+
+    return match.group(1) if match else None
