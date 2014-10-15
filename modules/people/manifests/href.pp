@@ -62,7 +62,7 @@ class people::href {
     include steam
     include minecraft
     include brewcask
-    
+
     # let kaleidoscope handle the .gitconfig
     class { 'kaleidoscope':
         make_default => false,
@@ -184,19 +184,19 @@ class people::href {
     sublime_text_2::package { 'Dockerfile Syntax Highlighting' :
         source => 'asbjornenge/Dockerfile.tmLanguage'
     }
-    sublime_text_2::package { 'Lispindent' : 
+    sublime_text_2::package { 'Lispindent' :
         source => 'odyssomay/sublime-lispindent'
     }
-    sublime_text_2::package { 'Jinja2' : 
+    sublime_text_2::package { 'Jinja2' :
         source => 'mitsuhiko/jinja2-tmbundle'
     }
-    sublime_text_2::package { 'Scheme' : 
+    sublime_text_2::package { 'Scheme' :
         source => 'egrachev/sublime-scheme'
     }
     sublime_text_2::package { 'Rust' :
         source => 'jhasse/sublime-rust'
     }
-    sublime_text_2::package { 'TOML' : 
+    sublime_text_2::package { 'TOML' :
         source => 'lmno/TOML'
     }
 
@@ -238,7 +238,7 @@ class people::href {
     file { "${home}/.pdbrc.py" :
         ensure => link,
         target => "${dotfiles}/.pdbrc.py"
-    } ->    
+    } ->
 
     # buildout defaults
     file { [
@@ -260,8 +260,13 @@ class people::href {
     }
 
     # python
-    include python
-    include python::virtualenvwrapper
+    class { 'python' : } ->
+    class { 'python::virtualenvwrapper' : } ->
+
+    python::pip { 'pipsi==0.8' :
+        ensure     => 'present',
+        virtualenv => $python::config::global_venv
+    }
 
     # virtualenvwrapper postactivate
     file { "${home}/.virtualenvs" :
