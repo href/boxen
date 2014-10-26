@@ -106,7 +106,6 @@ class people::href {
         'libmagic',
         'libpng',
         'lynx',
-        'offlineimap',
         'packer',
     ]
 
@@ -301,7 +300,12 @@ class people::href {
                 command => "${userscripts}/minecraft-backup",
                 user    => denis
             }
+            
+            projects::offlineimap { $::boxen_user :
+                logs => $logs
+            } ->
             cron { 'daily mail backup' :
+                ensure => 'absent',
                 hour    => '19',
                 minute  => '30',
                 command => "/opt/boxen/homebrew/bin/offlineimap > ${logs}/mail-backup.log",

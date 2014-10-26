@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>org.<%= @user %>.offlineimap</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>bash</string>
+        <string>-c</string>
+        <string>/opt/boxen/homebrew/bin/offlineimap > <%= @logs %>/mail-backup.log</string>
+    </array>
+    <key>WorkingDirectory</key>
+    <string><%= @home %></string>
+    <key>RunAtLoad</key>
+    <true />
+    <key>LaunchOnlyOnce</key>
+    <true />
+</dict>
+</plist>
