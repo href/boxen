@@ -198,6 +198,9 @@ class people::href {
     sublime_text_2::package { 'TOML' :
         source => 'lmno/TOML'
     }
+    sublime_text_2::package { 'FileBrowser' : 
+        source => 'aziz/SublimeFileBrowser'
+    }
 
     # dotfiles
     repository { $dotfiles :
