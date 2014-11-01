@@ -295,6 +295,9 @@ class people::href {
         ensure => directory
     }
 
+    # disable dashboard
+    include 'projects::turn_off_dashboard'
+
     case $::hostname {
         'home': {
             cron { 'daily minecraft backup' :
