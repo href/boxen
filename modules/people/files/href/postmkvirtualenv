@@ -1,3 +1,5 @@
 proj_name=$(echo $VIRTUAL_ENV|awk -F'/' '{print $NF}')
-mkdir $HOME/Code/$proj_name
+if ! test -d $HOME/Code/$proj_name; then
+    mkdir $HOME/Code/$proj_name
+fi
 cd $HOME/Code/$proj_name
