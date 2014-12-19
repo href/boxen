@@ -39,6 +39,9 @@ class people::href {
     git::config::global { 'core.autocrlf' :
         value => 'input'
     }
+    git::config::global { 'precomposeunicode' :
+        value => 'true'
+    }
 
     # core
     include firefox
