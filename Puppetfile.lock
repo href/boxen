@@ -149,11 +149,6 @@ GITHUBTARBALL
     steam (1.0.1)
 
 GITHUBTARBALL
-  remote: boxen/puppet-sublime_text_2
-  specs:
-    sublime_text_2 (1.1.2)
-
-GITHUBTARBALL
   remote: boxen/puppet-sudo
   specs:
     sudo (1.0.0)
@@ -197,6 +192,11 @@ GITHUBTARBALL
   remote: href/puppet-python
   specs:
     python (2.0.0.custom)
+
+GITHUBTARBALL
+  remote: href/puppet-sublime_text_3
+  specs:
+    sublime_text_3 (1.0.4b)
 
 GITHUBTARBALL
   remote: ngs/puppet-kaleidoscope
@@ -262,7 +262,7 @@ DEPENDENCIES
   spotify (= 1.0.2)
   stdlib (= 4.2.1)
   steam (= 1.0.1)
-  sublime_text_2 (= 1.1.2)
+  sublime_text_3 (= 1.0.4b)
   sudo (= 1.0.0)
   sysctl (= 1.0.1)
   textual (= 4.2.0)

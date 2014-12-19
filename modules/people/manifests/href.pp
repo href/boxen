@@ -109,7 +109,7 @@ class people::href {
         'libmagic',
         'libpng',
         'lynx',
-        'packer',
+        'packer'
     ]
 
     $cask_packages = []
@@ -137,73 +137,96 @@ class people::href {
 
     # sublime text syncing
     Class['dropbox'] ->
-    Class['sublime_text_2'] ->
+    Class['sublime_text_3'] ->
 
-    file { "${userscripts}/setup-sublime-sync" :
-        ensure => present,
-        source => "${userfiles}/setup-sublime-sync",
-        mode   => '0770'
+    exec { "mkdir -p /Users/denis/Dropbox/Sublime-Sync/Packages/User" :
+        creates => "/Users/denis/Dropbox/Sublime-Sync/Packages/User"
     } ->
 
-    exec { "${userscripts}/setup-sublime-sync" : }
+    file { "/Users/denis/Library/Application Support/Sublime Text 3/Packages/User" :
+        ensure => "link",
+        target => "/Users/denis/Dropbox/Sublime-Sync/Packages/User",
+        force  => true
+    }
 
     # vagrant
-    include vagrant
+    include vag--;rant
     vagrant::plugin { 'vagrant-multiprovider-snap' : }
 
-    # sublime text
-    include sublime_text_2
-    sublime_text_2::package { 'SublimeLinter' :
-        source => 'SublimeLinter/SublimeLinter'
+    # sublime text 3
+    include sublime_text_3
+    include sublime_text_3::package_control
+
+    sublime_text_3::package { 'SublimeLinter' :
+        source => 'SublimeLinter/SublimeLinter3'
     }
-    sublime_text_2::package { 'GitGutter' :
+    sublime_text_3::package { 'SublimeLinter-puppet-lint' :
+        source => 'stopdropandrew/SublimeLinter-puppet-lint'
+    }
+    sublime_text_3::package { 'SublimeLinter-flake8' :
+        source => 'SublimeLinter/SublimeLinter-flake8'
+    }
+    sublime_text_3::package { 'SublimeLinter-jshint' :
+        source => 'SublimeLinter/SublimeLinter-jshint'
+    }
+    sublime_text_3::package { 'SublimeLinter-pep8' :
+        source => 'SublimeLinter/SublimeLinter-pep8'
+    }
+    sublime_text_3::package { 'SublimeLinter-pep257' :
+        source => 'SublimeLinter/SublimeLinter-pep257'
+    }
+    sublime_text_3::package { 'SublimeLinter-pyyaml' :
+        source => 'SublimeLinter/SublimeLinter-pyyaml'
+    }
+    sublime_text_3::package { 'GitGutter' :
         source => 'jisaacks/GitGutter'
     }
-    sublime_text_2::package { 'SublimePuppet' :
+    sublime_text_3::package { 'SublimePuppet' :
         source => 'russCloak/SublimePuppet'
     }
-    sublime_text_2::package { 'Tomorrow Color Schemes' :
+    sublime_text_3::package { 'Tomorrow Color Schemes' :
         source => 'theymaybecoders/sublime-tomorrow-theme'
     }
-    sublime_text_2::package { 'Trimmer' :
+    sublime_text_3::package { 'Trimmer' :
         source => 'jonlabelle/Trimmer'
     }
-    sublime_text_2::package { 'Syntax Highlighting for Sass' :
+    sublime_text_3::package { 'Syntax Highlighting for Sass' :
         source => 'P233/Syntax-highlighting-for-Sass'
     }
-    sublime_text_2::package { 'Robot Framework' :
+    sublime_text_3::package { 'Robot Framework' :
         source => 'shellderp/sublime-robot-plugin'
     }
-    sublime_text_2::package { 'Theme - Spacegray' :
+    sublime_text_3::package { 'Theme - Spacegray' :
         source => 'kkga/spacegray'
     }
-    sublime_text_2::package { 'GoSublime' :
-        source => 'DisposaBoy/GoSublime'
-    }
-    sublime_text_2::package { 'Dictionaries' :
+    sublime_text_3::package { 'Dictionaries' :
         source => 'SublimeText/Dictionaries'
     }
-    sublime_text_2::package { 'Dockerfile Syntax Highlighting' :
+    sublime_text_3::package { 'Dockerfile Syntax Highlighting' :
         source => 'asbjornenge/Dockerfile.tmLanguage'
     }
-    sublime_text_2::package { 'Lispindent' :
+    sublime_text_3::package { 'Lispindent' :
         source => 'odyssomay/sublime-lispindent'
     }
-    sublime_text_2::package { 'Jinja2' :
+    sublime_text_3::package { 'Jinja2' :
         source => 'mitsuhiko/jinja2-tmbundle'
     }
-    sublime_text_2::package { 'Scheme' :
+    sublime_text_3::package { 'Scheme' :
         source => 'egrachev/sublime-scheme'
     }
-    sublime_text_2::package { 'Rust' :
+    sublime_text_3::package { 'Rust' :
         source => 'jhasse/sublime-rust'
     }
-    sublime_text_2::package { 'TOML' :
+    sublime_text_3::package { 'TOML' :
         source => 'lmno/TOML'
     }
-    sublime_text_2::package { 'FileBrowser' : 
+    sublime_text_3::package { 'FileBrowser' :
         source => 'aziz/SublimeFileBrowser'
     }
+
+    # for sublime linter
+    exec { "pip2 install flake8 pep8 pep257" : }
+    exec { "pip3 install flake8 pep8 pep257" : }
 
     # dotfiles
     repository { $dotfiles :
@@ -309,7 +332,7 @@ class people::href {
                 command => "${userscripts}/minecraft-backup",
                 user    => denis
             }
-            
+
             projects::offlineimap { $::boxen_user :
                 logs => $logs
             } ->

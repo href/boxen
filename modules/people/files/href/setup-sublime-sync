@@ -14,18 +14,18 @@
 # Note: If there is an existing installation in Dropbox,
 # it will replace settings on a local computer
 
-# No Warranty! Use on your own risk. Take backup of Library/Application Support/Sublime Text 2 folder first.
+# No Warranty! Use on your own risk. Take backup of Library/Application Support/Sublime Text 3 folder first.
 
 DROPBOX="$HOME/Dropbox"
 
 # Where do we put Sublime settings in our Dropbox
-SYNC_FOLDER="$DROPBOX/Sublime"
+SYNC_FOLDER="$DROPBOX/Sublime 3"
 
 # Where Sublime settings have been installed
 if [ `uname` = "Darwin" ];then
-        SOURCE="$HOME/Library/Application Support/Sublime Text 2"
+        SOURCE="$HOME/Library/Application Support/Sublime Text 3"
 elif [ `uname` = "Linux" ];then
-        SOURCE="$HOME/.config/sublime-text-2"
+        SOURCE="$HOME/.config/sublime-text"
 else
         echo "Unknown operating system"
         exit 0
