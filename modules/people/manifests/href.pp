@@ -39,7 +39,7 @@ class people::href {
     git::config::global { 'core.autocrlf' :
         value => 'input'
     }
-    git::config::global { 'precomposeunicode' :
+    git::config::global { 'core.precomposeunicode' :
         value => 'true'
     }
 
