@@ -40,7 +40,7 @@ class people::href {
         value => 'input'
     }
     git::config::global { 'precomposeunicode' :
-        value => 'true'
+        value => 'false'
     }
 
     # core
