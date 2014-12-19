@@ -29,6 +29,6 @@ echo 'adding zope user'
 bin/instance adduser zope zope
 
 echo 'setup test-email'
-bin/instance run ~/Code/onegov/parts/omelette/seantis/plonetools/scripts/configure-email.py localhost 1025 '' '' Test test@example.org
+bin/instance run ~/Code/onegov/src/seantis.plonetools/seantis/plonetools/scripts/configure-email.py localhost 1025 '' '' Test test@example.org
 
 echo 'done'
