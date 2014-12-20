@@ -1,3 +1,4 @@
+# configure's the osx environment of user 'href'
 class people::href {
 
     # variables
@@ -40,7 +41,7 @@ class people::href {
         value => 'input'
     }
     git::config::global { 'core.precomposeunicode' :
-        value => 'true'
+        value => true
     }
 
     # core
@@ -136,16 +137,19 @@ class people::href {
     }
 
     # sublime text syncing
+    $dropbox = '/Users/denis/Dropbox'
+    $application_support = '/Users/denis/Library/Application Support'
+
     Class['dropbox'] ->
     Class['sublime_text_3'] ->
 
-    exec { "mkdir -p /Users/denis/Dropbox/Sublime-Sync/Packages/User" :
-        creates => "/Users/denis/Dropbox/Sublime-Sync/Packages/User"
+    exec { "mkdir -p ${dropbox}/Sublime-Sync/Packages/User" :
+        creates => "${dropbox}/Sublime-Sync/Packages/User"
     } ->
 
-    file { "/Users/denis/Library/Application Support/Sublime Text 3/Packages/User" :
-        ensure => "link",
-        target => "/Users/denis/Dropbox/Sublime-Sync/Packages/User",
+    file { "${application_support}/Sublime Text 3/Packages/User" :
+        ensure => 'link',
+        target => "${dropbox}/Sublime-Sync/Packages/User",
         force  => true
     }
 
@@ -223,13 +227,13 @@ class people::href {
     sublime_text_3::package { 'FileBrowser' :
         source => 'aziz/SublimeFileBrowser'
     }
-    sublime_text_3::package { 'Theme - Glacier' : 
+    sublime_text_3::package { 'Theme - Glacier' :
         source => 'joeyfigaro/glacier-theme'
     }
 
     # for sublime linter
-    exec { "pip2 install flake8 pep8 pep257" : }
-    exec { "pip3 install flake8 pep8 pep257" : }
+    exec { 'pip2 install flake8 pep8 pep257' : }
+    exec { 'pip3 install flake8 pep8 pep257' : }
 
     # dotfiles
     repository { $dotfiles :
@@ -329,32 +333,12 @@ class people::href {
 
     case $::hostname {
         'home': {
-            cron { 'daily minecraft backup' :
-                hour    => '19',
-                minute  => '0',
-                command => "${userscripts}/minecraft-backup",
-                user    => denis
-            }
-
             projects::offlineimap { $::boxen_user :
                 logs => $logs
-            } ->
-            cron { 'daily mail backup' :
-                ensure => 'absent',
-                hour    => '19',
-                minute  => '30',
-                command => "/opt/boxen/homebrew/bin/offlineimap > ${logs}/mail-backup.log",
-                user    => denis
             }
         }
-        'dk': {
-            cron { 'daily minecraft backup' :
-                hour    => '10',
-                minute  => '0',
-                command => "${userscripts}/minecraft-backup",
-                user    => denis
-            }
-        }
+        default : {
 
+        }
     }
 }
