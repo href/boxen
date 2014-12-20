@@ -150,7 +150,7 @@ class people::href {
     }
 
     # vagrant
-    include vag--;rant
+    include vagrant
     vagrant::plugin { 'vagrant-multiprovider-snap' : }
 
     # sublime text 3
@@ -222,6 +222,9 @@ class people::href {
     }
     sublime_text_3::package { 'FileBrowser' :
         source => 'aziz/SublimeFileBrowser'
+    }
+    sublime_text_3::package { 'Theme - Glacier' : 
+        source => 'joeyfigaro/glacier-theme'
     }
 
     # for sublime linter
