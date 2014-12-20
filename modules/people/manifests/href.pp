@@ -230,6 +230,9 @@ class people::href {
     sublime_text_3::package { 'Theme - Glacier' :
         source => 'joeyfigaro/glacier-theme'
     }
+    sublime_text_3::package { 'BracketHighlighter' :
+        source => 'facelessuser/BracketHighlighter'
+    }
 
     # for sublime linter
     exec { 'pip2 install flake8 pep8 pep257' : }
