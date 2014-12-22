@@ -258,6 +258,13 @@ class people::href {
     ]
     projects::global_python_package { $linter_python_packages : }
 
+    $linter_node_packages = [
+        'jshint',
+    ]
+    nodejs::module { $linter_node_packages :
+        node_version => 'v0.10'
+    }
+
     # dotfiles
     repository { $dotfiles :
         source => "${github}/dotfiles"
@@ -297,6 +304,11 @@ class people::href {
         ensure => link,
         target => "${dotfiles}/.pdbrc.py"
     } ->
+
+    file { "${home}/.jshintrc" :
+        ensure => link,
+        target => "${dotfiles}/.jshintrc"
+    }
 
     # buildout defaults
     file { [
