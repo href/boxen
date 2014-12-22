@@ -50,7 +50,6 @@ class people::href {
     include dropbox
     include wuala
     include skype
-    include spotify
     include chrome
     include ohmyzsh
     include iterm2::stable
@@ -113,7 +112,9 @@ class people::href {
         'packer'
     ]
 
-    $cask_packages = []
+    $cask_packages = [
+        'spotify'
+    ]
 
     package { $homebrew_packages :
         ensure => present
