@@ -136,6 +136,10 @@ class people::href {
         version         => '~> 0.3.2'
     }
 
+    # haskell
+    include 'projects::haskell_platform'
+    projects::haskell_package { 'shellcheck' : }
+
     # sublime text syncing
     $dropbox = '/Users/denis/Dropbox'
     $application_support = '/Users/denis/Library/Application Support'
@@ -233,10 +237,20 @@ class people::href {
     sublime_text_3::package { 'BracketHighlighter' :
         source => 'facelessuser/BracketHighlighter'
     }
+    sublime_text_3::package { 'ColorHighlighter' :
+        source => 'Monnoroch/ColorHighlighter'
+    }
+    sublime_text_3::package { 'SublimeLinter-shellcheck' :
+        source => 'SublimeLinter/SublimeLinter-shellcheck'
+    }
 
     # for sublime linter
-    exec { 'pip2 install flake8 pep8 pep257' : }
-    exec { 'pip3 install flake8 pep8 pep257' : }
+    $linter_python_packages = [
+        'flake8',
+        'pep8',
+        'pep257'
+    ]
+    projects::global_python_package { $linter_python_packages : }
 
     # dotfiles
     repository { $dotfiles :
