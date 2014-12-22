@@ -45,20 +45,19 @@ class people::href {
     }
 
     # core modules
-    include onepassword
-    include dropbox
-    include chrome
-    include ohmyzsh
-    include iterm2::stable
     include alfred
-    include postgresql
-    include littlesnitch
     include bartender
-    include memcached
-    include textual
-    include charles
-    include steam
     include brewcask
+    include charles
+    include dropbox
+    include iterm2::stable
+    include littlesnitch
+    include memcached
+    include ohmyzsh
+    include onepassword
+    include postgresql
+    include steam
+    include textual
 
     # libraries / cli tools
     $core_packages = [
@@ -82,9 +81,12 @@ class people::href {
     $applications = [
         'firefox',
         'firefoxdeveloperedition',
+        'google-chrome',
         'hipchat',
+        'hive',
         'skype',
         'spotify',
+        'panic-unison',
         'wuala'
     ]
 
@@ -96,7 +98,7 @@ class people::href {
 
     # make sure wuala is started in the background
     Package ['wuala'] ->
-    file_line { 'wuala silent start':
+    file_line { 'wuala silent start' :
         path => "${home}/Library/Application Support/Wuala/Wuala.cfg",
         line => 'silent=true'
     }
