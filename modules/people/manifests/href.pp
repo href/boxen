@@ -15,15 +15,15 @@ class people::href {
     include osx::global::expand_save_dialog
     include osx::global::disable_remote_control_ir_receiver
 
-    class { 'osx::global::natural_mouse_scrolling':
+    class { 'osx::global::natural_mouse_scrolling' :
         enabled => false
     }
 
-    class { 'osx::global::key_repeat_rate':
+    class { 'osx::global::key_repeat_rate' :
         rate => 0
     }
 
-    class { 'osx::global::key_repeat_delay':
+    class { 'osx::global::key_repeat_delay' :
         delay => 0
     }
 
@@ -68,7 +68,7 @@ class people::href {
     include brewcask
 
     # let kaleidoscope handle the .gitconfig
-    class { 'kaleidoscope':
+    class { 'kaleidoscope' :
         make_default => false,
     }
 
@@ -125,15 +125,20 @@ class people::href {
 
     # globally used ruby
     $globalruby = '2.0.0'
-    class { 'ruby::global':
+    class { 'ruby::global' :
         version => $globalruby
     }
 
     # gems
-    ruby_gem { "puppet-lint for ${globalruby}":
-        gem             => 'puppet-lint',
-        ruby_version    => $globalruby,
-        version         => '~> 0.3.2'
+    ruby_gem { "puppet-lint for ${globalruby}" :
+        gem          => 'puppet-lint',
+        ruby_version => $globalruby,
+        version      => '~> 1.1.0'
+    }
+    ruby_gem { "scss-lint for ${globalruby}" :
+        gem          => 'scss-lint',
+        ruby_version => $globalruby,
+        version      => '~> 0.31.0'
     }
 
     # haskell
@@ -248,6 +253,9 @@ class people::href {
     }
     sublime_text_3::package { 'SublimeLinter-csslint' :
         source => 'SublimeLinter/SublimeLinter-csslint'
+    }
+    sublime_text_3::package { 'SublimeLinter-scss-lint' :
+        source => 'attenzione/SublimeLinter-scss-lint'
     }
 
     # for sublime linter
