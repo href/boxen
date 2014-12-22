@@ -44,8 +44,38 @@ class people::href {
         value => true
     }
 
-    # core
-    include firefox
+    # libraries / cli tools
+    $core_packages = [
+        'aria2',
+        'docker',
+        'ghi',
+        'go',
+        'lftp',
+        'libjpeg',
+        'libmagic',
+        'libpng',
+        'lynx',
+        'packer'
+    ]
+
+    package { $core_packages :
+        ensure => present
+    }
+
+    # mac apps (from cask)
+    $applications = [
+        'firefox',
+        'firefoxdeveloperedition',
+        'spotify'
+    ]
+
+    homebrew::tap { 'caskroom/versions' : } ->
+
+    package { $applications :
+        provider => 'brewcask'
+    }
+
+    # core modules
     include onepassword
     include dropbox
     include wuala
@@ -96,32 +126,6 @@ class people::href {
         ensure => present,
         source => "${userfiles}/keychain",
         mode   => '0770'
-    }
-
-    # packages
-    $homebrew_packages = [
-        'aria2',
-        'docker',
-        'ghi',
-        'go',
-        'lftp',
-        'libjpeg',
-        'libmagic',
-        'libpng',
-        'lynx',
-        'packer'
-    ]
-
-    $cask_packages = [
-        'spotify'
-    ]
-
-    package { $homebrew_packages :
-        ensure => present
-    }
-
-    package { $cask_packages :
-        provider => 'brewcask'
     }
 
     # globally used ruby
