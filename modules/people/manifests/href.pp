@@ -66,6 +66,7 @@ class people::href {
     $applications = [
         'firefox',
         'firefoxdeveloperedition',
+        'skype',
         'spotify'
     ]
 
@@ -79,7 +80,6 @@ class people::href {
     include onepassword
     include dropbox
     include wuala
-    include skype
     include chrome
     include ohmyzsh
     include iterm2::stable
