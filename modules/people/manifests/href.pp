@@ -246,6 +246,9 @@ class people::href {
     sublime_text_3::package { 'SublimeLinter-rst' :
         source => 'SublimeLinter/SublimeLinter-rst'
     }
+    sublime_text_3::package { 'SublimeLinter-csslint' :
+        source => 'SublimeLinter/SublimeLinter-csslint'
+    }
 
     # for sublime linter
     $linter_python_packages = [
@@ -259,6 +262,7 @@ class people::href {
     projects::global_python_package { $linter_python_packages : }
 
     $linter_node_packages = [
+        'csslint',
         'jshint',
     ]
     nodejs::module { $linter_node_packages :
