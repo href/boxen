@@ -169,11 +169,6 @@ GITHUBTARBALL
     ohmyzsh (0.0.1)
 
 GITHUBTARBALL
-  remote: haelmy/puppet-wuala
-  specs:
-    wuala (0.0.1)
-
-GITHUBTARBALL
   remote: href/puppet-python
   specs:
     python (2.0.0.custom)
@@ -249,6 +244,5 @@ DEPENDENCIES
   sysctl (= 1.0.1)
   textual (= 4.2.0)
   vagrant (= 3.2.0)
-  wuala (= 0.0.1)
   xquartz (= 1.2.1)
 

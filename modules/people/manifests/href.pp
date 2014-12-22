@@ -67,7 +67,8 @@ class people::href {
         'firefox',
         'firefoxdeveloperedition',
         'skype',
-        'spotify'
+        'spotify',
+        'wuala'
     ]
 
     homebrew::tap { 'caskroom/versions' : } ->
@@ -79,7 +80,6 @@ class people::href {
     # core modules
     include onepassword
     include dropbox
-    include wuala
     include chrome
     include ohmyzsh
     include iterm2::stable
@@ -95,6 +95,13 @@ class people::href {
     include steam
     include minecraft
     include brewcask
+
+    # make sure wuala is started in the background
+    Package ['wuala'] ->
+    file_line { 'wuala silent start':
+        path => "${home}/Library/Application Support/Wuala/Wuala.cfg",
+        line => 'silent=true'
+    }
 
     # let kaleidoscope handle the .gitconfig
     class { 'kaleidoscope' :
