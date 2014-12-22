@@ -258,6 +258,9 @@ class people::href {
     sublime_text_3::package { 'SublimeLinter-scss-lint' :
         source => 'attenzione/SublimeLinter-scss-lint'
     }
+    sublime_text_3::package { 'SublimeLinter-ruby' :
+        source => 'SublimeLinter/SublimeLinter-ruby'
+    }
 
     # for sublime linter
     $linter_python_packages = [
