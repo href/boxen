@@ -44,6 +44,22 @@ class people::href {
         value => true
     }
 
+    # core modules
+    include onepassword
+    include dropbox
+    include chrome
+    include ohmyzsh
+    include iterm2::stable
+    include alfred
+    include postgresql
+    include littlesnitch
+    include bartender
+    include memcached
+    include textual
+    include charles
+    include steam
+    include brewcask
+
     # libraries / cli tools
     $core_packages = [
         'aria2',
@@ -66,6 +82,7 @@ class people::href {
     $applications = [
         'firefox',
         'firefoxdeveloperedition',
+        'hipchat',
         'skype',
         'spotify',
         'wuala'
@@ -76,25 +93,6 @@ class people::href {
     package { $applications :
         provider => 'brewcask'
     }
-
-    # core modules
-    include onepassword
-    include dropbox
-    include chrome
-    include ohmyzsh
-    include iterm2::stable
-    include alfred
-    include hipchat
-    include vmware_fusion
-    include postgresql
-    include littlesnitch
-    include bartender
-    include memcached
-    include textual
-    include charles
-    include steam
-    include minecraft
-    include brewcask
 
     # make sure wuala is started in the background
     Package ['wuala'] ->
