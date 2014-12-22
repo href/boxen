@@ -370,6 +370,9 @@ class people::href {
         ensure => directory
     }
 
+    # quicklook improvements
+    include 'projects::quicklook_textfiles'
+
     # disable dashboard
     include 'projects::turn_off_dashboard'
 
