@@ -238,17 +238,23 @@ class people::href {
         source => 'facelessuser/BracketHighlighter'
     }
     sublime_text_3::package { 'ColorHighlighter' :
-        source => 'Monnoroch/ColorHighlighter'
+        source => 'href/ColorHighlighter'
     }
     sublime_text_3::package { 'SublimeLinter-shellcheck' :
         source => 'SublimeLinter/SublimeLinter-shellcheck'
     }
+    sublime_text_3::package { 'SublimeLinter-rst' :
+        source => 'SublimeLinter/SublimeLinter-rst'
+    }
 
     # for sublime linter
     $linter_python_packages = [
+        'docutils',
         'flake8',
+        'pep257',
         'pep8',
-        'pep257'
+        'pygments',
+        'pyyaml',
     ]
     projects::global_python_package { $linter_python_packages : }
 
