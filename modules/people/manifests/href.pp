@@ -82,6 +82,7 @@ class people::href {
         'firefox',
         'firefoxdeveloperedition',
         'google-chrome',
+        'harvest',
         'hipchat',
         'hive',
         'skype',
