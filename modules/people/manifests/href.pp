@@ -265,6 +265,9 @@ class people::href {
     sublime_text_3::package { 'SublimeLinter-ruby' :
         source => 'SublimeLinter/SublimeLinter-ruby'
     }
+    sublime_text_3::package { 'sublimetext-markdown-preview' :
+        source => 'revolunet/sublimetext-markdown-preview'
+    }
 
     # for sublime linter
     $linter_python_packages = [
