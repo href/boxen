@@ -11,9 +11,16 @@ class people::href {
 
     # osx config
     include osx::global::enable_keyboard_control_access
+    include osx::global::enable_standard_function_keys
+    include osx::global::tap_to_click
     include osx::global::expand_print_dialog
     include osx::global::expand_save_dialog
     include osx::global::disable_remote_control_ir_receiver
+    include osx::dock::disable_dashboard
+    include osx::finder::empty_trash_securely
+    include osx::finder::enable_quicklook_text_selection
+    include osx::finder::no_file_extension_warnings
+    include osx::safari::enable_developer_mode
 
     class { 'osx::global::natural_mouse_scrolling' :
         enabled => false
@@ -24,12 +31,20 @@ class people::href {
     }
 
     class { 'osx::global::key_repeat_delay' :
-        delay => 0
+        delay => 5
+    }
+
+    class { 'osx::dock::hot_corners' :
+        bottom_right => 'Mission Control'
+    }
+
+    class { 'osx::sound::interface_sound_effects' :
+        enable => false
     }
 
     # git config
     git::config::global { 'user.email' :
-        value => 'denis@href.ch'
+        value => 'denis.krienbuehl@seantis.ch'
     }
     git::config::global { 'user.name' :
         value => 'Denis Krienbühl'
@@ -393,9 +408,6 @@ class people::href {
 
     # quicklook improvements
     include 'projects::quicklook_textfiles'
-
-    # disable dashboard
-    include 'projects::turn_off_dashboard'
 
     case $::hostname {
         'home': {
