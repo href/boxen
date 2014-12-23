@@ -85,6 +85,7 @@ class people::href {
         'harvest',
         'hipchat',
         'hive',
+        'inkscape',
         'skype',
         'spotify',
         'panic-unison',
