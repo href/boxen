@@ -437,4 +437,9 @@ class people::href {
 
         }
     }
+
+    # disable last login message
+    file { "${home}/.hushlogin" :
+        ensure => 'present'
+    }
 }
