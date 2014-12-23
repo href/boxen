@@ -60,7 +60,6 @@ github "xquartz",     "1.2.1"
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
 github "alfred",            "1.4.0"
-github "bartender",         "1.0.0", :repo => "erichkist/puppet-bartender"
 github "brewcask",          "0.0.4", :repo => "phinze/puppet-brewcask"
 github "charles",           "1.0.4"
 github "dropbox",           "1.4.1"

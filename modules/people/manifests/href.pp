@@ -46,7 +46,6 @@ class people::href {
 
     # core modules
     include alfred
-    include bartender
     include brewcask
     include charles
     include dropbox
@@ -79,6 +78,7 @@ class people::href {
 
     # mac apps (from cask)
     $applications = [
+        'bartender',
         'firefox',
         'firefoxdeveloperedition',
         'google-chrome',

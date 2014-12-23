@@ -149,11 +149,6 @@ GITHUBTARBALL
     xquartz (1.2.1)
 
 GITHUBTARBALL
-  remote: erichkist/puppet-bartender
-  specs:
-    bartender (1.0.0)
-
-GITHUBTARBALL
   remote: haelmy/puppet-ohmyzsh
   specs:
     ohmyzsh (0.0.1)
@@ -195,7 +190,6 @@ GITHUBTARBALL
 
 DEPENDENCIES
   alfred (= 1.4.0)
-  bartender (= 1.0.0)
   boxen (= 3.7.0)
   brewcask (= 0.0.4)
   charles (= 1.0.4)
