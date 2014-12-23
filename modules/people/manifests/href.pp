@@ -359,6 +359,11 @@ class people::href {
     file { "${home}/.jshintrc" :
         ensure => link,
         target => "${dotfiles}/.jshintrc"
+    } ->
+
+    file { "${home}/.mackup.cfg" :
+        ensure => link,
+        target => "${dotfiles}/.mackup.cfg"
     }
 
     # buildout defaults
@@ -387,6 +392,15 @@ class people::href {
     python::pip { 'pipsi==0.8' :
         ensure     => 'present',
         virtualenv => $python::config::global_venv
+    }
+
+    # mackup
+    python::pip { 'mackup' :
+        ensure     => 'present',
+        virtualenv => $python::config::global_venv
+    } ->
+    file { "${home}/Sync" :
+        ensure => 'directory'
     }
 
     # virtualenvwrapper postactivate
