@@ -88,6 +88,7 @@ class people::href {
         'skype',
         'spotify',
         'panic-unison',
+        'viscosity',
         'wuala'
     ]
 
