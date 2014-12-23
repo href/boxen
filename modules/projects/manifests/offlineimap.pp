@@ -3,12 +3,12 @@ define projects::offlineimap($logs) {
 
     $user = $name
     $home = "/Users/${user}"
-    
+
     if !defined(File["${home}/.offlineimaprc"]) {
         fail("${home}/.offlineimaprc is undefined")
     }
 
-    package { 'offlineimap' : 
+    package { 'offline-imap' :
         ensure => present
     } ->
 
