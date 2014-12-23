@@ -55,7 +55,6 @@ class people::href {
     include ohmyzsh
     include onepassword
     include postgresql
-    include steam
     include textual
 
     # libraries / cli tools
@@ -88,6 +87,7 @@ class people::href {
         'inkscape',
         'skype',
         'spotify',
+        'steam',
         'panic-unison',
         'viscosity',
         'wuala'

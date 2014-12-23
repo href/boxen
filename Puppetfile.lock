@@ -119,11 +119,6 @@ GITHUBTARBALL
     ruby (8.1.7)
 
 GITHUBTARBALL
-  remote: boxen/puppet-steam
-  specs:
-    steam (1.0.1)
-
-GITHUBTARBALL
   remote: boxen/puppet-sudo
   specs:
     sudo (1.0.0)
@@ -220,7 +215,6 @@ DEPENDENCIES
   repository (= 2.3.0)
   ruby (= 8.1.7)
   stdlib (= 4.2.1)
-  steam (= 1.0.1)
   sublime_text_3 (= 1.0.4b)
   sudo (= 1.0.0)
   sysctl (= 1.0.1)
