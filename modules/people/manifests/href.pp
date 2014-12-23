@@ -63,7 +63,6 @@ class people::href {
     include alfred
     include brewcask
     include dropbox
-    include iterm2::stable
     include littlesnitch
     include memcached
     include ohmyzsh
@@ -100,6 +99,7 @@ class people::href {
         'hipchat',
         'hive',
         'inkscape',
+        'iterm2',
         'skype',
         'spotify',
         'steam',
