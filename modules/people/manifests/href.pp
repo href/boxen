@@ -92,6 +92,7 @@ class people::href {
     $applications = [
         'bartender',
         'charles',
+        'dash',
         'firefox',
         'firefoxdeveloperedition',
         'google-chrome',
@@ -100,6 +101,7 @@ class people::href {
         'hive',
         'inkscape',
         'iterm2',
+        'navicat-premium',
         'skype',
         'spotify',
         'steam',
