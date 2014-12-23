@@ -10,6 +10,7 @@ class projects::quicklook_textfiles() {
 
     exec { "curl ${url} --location -o /tmp/qlstephen.zip" :
         creates => '/tmp/qlstephen.zip',
+        unless  => "test -d ${directory}/QLStephen.qlgenerator"
     } ->
 
     file { $directory :
