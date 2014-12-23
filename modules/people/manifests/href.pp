@@ -65,7 +65,7 @@ class people::href {
         'ghi',
         'go',
         'lftp',
-        'libjpeg',
+        'jpeg',
         'libmagic',
         'libpng',
         'lynx',
