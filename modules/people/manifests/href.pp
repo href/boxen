@@ -106,6 +106,7 @@ class people::href {
         'spotify',
         'steam',
         'the-tagger',
+        'the-unarchiver',
         'panic-unison',
         'viscosity',
         'wuala'
