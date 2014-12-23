@@ -103,6 +103,7 @@ class people::href {
         'skype',
         'spotify',
         'steam',
+        'the-tagger',
         'panic-unison',
         'viscosity',
         'wuala'
