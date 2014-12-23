@@ -9,11 +9,6 @@ GITHUBTARBALL
     boxen (3.7.0)
 
 GITHUBTARBALL
-  remote: boxen/puppet-charles
-  specs:
-    charles (1.0.4)
-
-GITHUBTARBALL
   remote: boxen/puppet-dnsmasq
   specs:
     dnsmasq (2.0.1)
@@ -187,7 +182,6 @@ DEPENDENCIES
   alfred (= 1.4.0)
   boxen (= 3.7.0)
   brewcask (= 0.0.4)
-  charles (= 1.0.4)
   dnsmasq (= 2.0.1)
   dropbox (= 1.4.1)
   foreman (= 1.2.0)

@@ -61,7 +61,6 @@ github "xquartz",     "1.2.1"
 # https://github.com/boxen.
 github "alfred",            "1.4.0"
 github "brewcask",          "0.0.4", :repo => "phinze/puppet-brewcask"
-github "charles",           "1.0.4"
 github "dropbox",           "1.4.1"
 github "iterm2",            "1.2.2"
 github "kaleidoscope",      "1.0.5", :repo => "ngs/puppet-kaleidoscope"
