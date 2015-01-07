@@ -174,6 +174,11 @@ class people::href {
         ruby_version => $globalruby,
         version      => '~> 0.31.0'
     }
+    ruby_gem { "svn2git for ${globalruby}" :
+        gem          => 'svn2git',
+        ruby_version => $globalruby,
+        version      => '~> 2.3.2'
+    }
 
     # haskell
     include 'projects::haskell_platform'
