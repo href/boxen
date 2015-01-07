@@ -302,6 +302,9 @@ class people::href {
     sublime_text_3::package { 'sublimetext-markdown-preview' :
         source => 'revolunet/sublimetext-markdown-preview'
     }
+    sublime_text_3::package { 'sublime-nginx' :
+        source => 'brandonwamboldt/sublime-nginx'
+    }
 
     # for sublime linter
     $linter_python_packages = [
