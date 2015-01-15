@@ -81,7 +81,8 @@ class people::href {
         'libmagic',
         'libpng',
         'lynx',
-        'packer'
+        'packer',
+        'tarsnap'
     ]
 
     package { $core_packages :
@@ -373,6 +374,11 @@ class people::href {
     file { "${home}/.mackup.cfg" :
         ensure => link,
         target => "${dotfiles}/.mackup.cfg"
+    } ->
+
+    file { "${home}/.tarsnaprc" :
+        ensure => link,
+        target => "${dotfiles}/.tarsnaprc"
     }
 
     # buildout defaults
