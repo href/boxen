@@ -159,11 +159,6 @@ GITHUBTARBALL
     kaleidoscope (1.0.5)
 
 GITHUBTARBALL
-  remote: phinze/puppet-brewcask
-  specs:
-    brewcask (0.0.4)
-
-GITHUBTARBALL
   remote: puppetlabs/puppetlabs-inifile
   specs:
     inifile (1.1.1)
@@ -214,3 +209,4 @@ DEPENDENCIES
   textual (= 4.2.0)
   vagrant (= 3.2.0)
   xquartz (= 1.2.1)
+
