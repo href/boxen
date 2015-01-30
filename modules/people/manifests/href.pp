@@ -400,6 +400,18 @@ class people::href {
         shell => '/bin/zsh',
     }
 
+    # install zsh plugins
+    file { ["${home}/.zsh", "${home}/.zsh/plugins"] :
+        ensure => 'directory',
+    } ->
+    file { "${home}/.zsh/plugins/bd" :
+        ensure => 'directory'
+    } ->
+    exec { 'install bd zsh plugin' :
+        command => "curl https://raw.githubusercontent.com/Tarrasch/zsh-bd/master/bd.zsh > ${home}/.zsh/plugins/bd/bd.zsh",
+        creates => "${home}/.zsh/plugins/bd/bd.zsh"
+    }
+
     # python
     class { 'python' : } ->
     class { 'python::virtualenvwrapper' : } ->
