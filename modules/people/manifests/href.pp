@@ -167,8 +167,16 @@ class people::href {
     # gems
     ruby_gem { "puppet-lint for ${globalruby}" :
         gem          => 'puppet-lint',
-        ruby_version => $globalruby,
-        version      => '~> 1.1.0'
+        ruby_version => $globalruby
+    } ->
+    projects::puppet_lint_plugin { [
+        'puppet-lint-trailing_newline-check',
+        'puppet-lint-variable_contains_upcase',
+        'puppet-lint-param-docs',
+        'puppet-lint-absolute_template_path',
+        'puppet-lint-unquoted_string-check'
+    ] :
+        ruby_version => $globalruby
     }
     ruby_gem { "scss-lint for ${globalruby}" :
         gem          => 'scss-lint',
