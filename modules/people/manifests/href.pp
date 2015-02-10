@@ -171,9 +171,12 @@ class people::href {
     } ->
     projects::puppet_lint_plugin { [
         'puppet-lint-variable_contains_upcase',
-        'puppet-lint-param-docs',
         'puppet-lint-absolute_template_path',
-        'puppet-lint-unquoted_string-check'
+        'puppet-lint-unquoted_string-check',
+        'puppet-lint-empty_string-check',
+        'puppet-lint-leading_zero-check',
+        'puppet-lint-absolute_classname-check',
+        'puppet-lint-undef_in_function-check'
     ] :
         ruby_version => $globalruby
     }
