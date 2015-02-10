@@ -170,7 +170,6 @@ class people::href {
         ruby_version => $globalruby
     } ->
     projects::puppet_lint_plugin { [
-        'puppet-lint-trailing_newline-check',
         'puppet-lint-variable_contains_upcase',
         'puppet-lint-param-docs',
         'puppet-lint-absolute_template_path',
