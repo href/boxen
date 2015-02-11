@@ -1,4 +1,7 @@
 # configure's the osx environment of user 'href'
+
+# lint:ignore:relative_classname_inclusion
+# => there are no relative classes here that could clash here
 class people::href {
 
     # variables
@@ -175,7 +178,6 @@ class people::href {
         'puppet-lint-unquoted_string-check',
         'puppet-lint-empty_string-check',
         'puppet-lint-leading_zero-check',
-        'puppet-lint-absolute_classname-check',
         'puppet-lint-undef_in_function-check'
     ] :
         ruby_version => $globalruby
@@ -213,7 +215,9 @@ class people::href {
     }
 
     # vagrant
-    include vagrant
+    class { 'vagrant' :
+        version => '1.7.2'
+    } ->
     vagrant::plugin { 'vagrant-multiprovider-snap' : }
 
     # sublime text 3
@@ -479,3 +483,4 @@ class people::href {
         ensure => 'present'
     }
 }
+# lint:endignore
