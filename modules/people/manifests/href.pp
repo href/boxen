@@ -106,6 +106,7 @@ class people::href {
         'inkscape',
         'iterm2',
         'navicat-premium',
+        'omnifocus',
         'skype',
         'spotify',
         'steam',
