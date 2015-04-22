@@ -99,7 +99,7 @@ class people::href {
         'dash',
         'firefox',
         'firefoxdeveloperedition',
-        'google-chrome',
+        'google-chrome-beta',
         'harvest',
         'hipchat',
         'hive',
@@ -321,6 +321,12 @@ class people::href {
     sublime_text_3::package { 'sublime-nginx' :
         source => 'brandonwamboldt/sublime-nginx'
     }
+    sublime_text_3::package { 'babel-sublime' :
+        source => 'babel/babel-sublime'
+    }
+    sublime_text_3::package { 'SublimeLinter-jsxhint' :
+        source => 'SublimeLinter/SublimeLinter-jsxhint'
+    }
 
     # for sublime linter
     $linter_python_packages = [
@@ -336,6 +342,7 @@ class people::href {
     $linter_node_packages = [
         'csslint',
         'jshint',
+        'jsxhint'
     ]
     nodejs::module { $linter_node_packages :
         node_version => 'v0.10'
