@@ -443,15 +443,6 @@ class people::href {
         virtualenv => $python::config::global_venv
     }
 
-    # mackup
-    python::pip { 'mackup' :
-        ensure     => 'present',
-        virtualenv => $python::config::global_venv
-    } ->
-    file { "${home}/Sync" :
-        ensure => 'directory'
-    }
-
     # virtualenvwrapper postactivate
     file { "${home}/.virtualenvs" :
         ensure => directory

@@ -146,7 +146,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: href/puppet-python
   specs:
-    python (2.0.0.custom)
+    python (2.0.5)
 
 GITHUBTARBALL
   remote: href/puppet-sublime_text_3
@@ -199,7 +199,7 @@ DEPENDENCIES
   phantomjs (= 2.3.0)
   pkgconfig (= 1.0.0)
   postgresql (= 3.0.1)
-  python (= 2.0.0.custom)
+  python (= 2.0.5)
   repository (= 2.3.0)
   ruby (= 8.1.7)
   stdlib (= 4.2.1)
