@@ -99,7 +99,7 @@ class people::href {
         'dash',
         'firefox',
         'firefoxdeveloperedition',
-        'google-chrome-beta',
+        'google-chrome',
         'harvest',
         'hipchat',
         'hive',
