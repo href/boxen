@@ -113,21 +113,13 @@ class people::href {
         'the-tagger',
         'the-unarchiver',
         'panic-unison',
-        'viscosity',
-        'wuala'
+        'viscosity'
     ]
 
     homebrew::tap { 'caskroom/versions' : } ->
 
     package { $applications :
         provider => 'brewcask'
-    }
-
-    # make sure wuala is started in the background
-    Package ['wuala'] ->
-    file_line { 'wuala silent start' :
-        path => "${home}/Library/Application Support/Wuala/Wuala.cfg",
-        line => 'silent=true'
     }
 
     # let kaleidoscope handle the .gitconfig
