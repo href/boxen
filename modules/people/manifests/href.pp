@@ -430,7 +430,7 @@ class people::href {
     class { 'python' : } ->
     class { 'python::virtualenvwrapper' : } ->
 
-    python::pip { 'pipsi==0.8' :
+    python::pip { ['pipsi', 'percol'] :
         ensure     => 'present',
         virtualenv => $python::config::global_venv
     }
