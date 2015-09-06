@@ -60,10 +60,10 @@ github "xquartz",     "1.2.1"
 
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
-github "alfred",            "1.4.0"
+github "alfred",            "1.5.0"
 github "dropbox",           "1.4.1"
 github "kaleidoscope",      "1.0.5", :repo => "ngs/puppet-kaleidoscope"
-github "karabiner",         "1.0.6"
+github "karabiner",         "1.0.7"
 github "memcached",         "2.0.0"
 github "ohmyzsh",           "0.0.1", :repo => "haelmy/puppet-ohmyzsh"
 github "onepassword",       "1.1.5"
@@ -73,5 +73,5 @@ github "python",            "2.0.5", :repo => "href/puppet-python"
 github "sublime_text_3",    "1.0.4b", :repo => "href/puppet-sublime_text_3"
 github "sysctl",            "1.0.1"
 github "textual",           "4.2.0"
-github "vagrant",           "3.2.2"
+github "vagrant",           "3.3.3"
 
