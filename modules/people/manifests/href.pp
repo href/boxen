@@ -66,6 +66,7 @@ class people::href {
     include alfred
     include brewcask
     include dropbox
+    include elasticsearch
     include littlesnitch
     include memcached
     include ohmyzsh
@@ -184,6 +185,11 @@ class people::href {
         gem          => 'svn2git',
         ruby_version => $globalruby,
         version      => '~> 2.3.2'
+    }
+    ruby_gem { "lunchy for ${globalruby}" :
+        gem          => 'lunchy',
+        ruby_version => $globalruby,
+        version      => '~> 0.10.3'
     }
 
     # haskell
