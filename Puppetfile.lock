@@ -1,7 +1,7 @@
 GITHUBTARBALL
   remote: boxen/puppet-alfred
   specs:
-    alfred (1.4.0)
+    alfred (1.5.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-boxen
@@ -56,7 +56,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-karabiner
   specs:
-    karabiner (1.0.6)
+    karabiner (1.0.7)
 
 GITHUBTARBALL
   remote: boxen/puppet-memcached
@@ -101,7 +101,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-postgresql
   specs:
-    postgresql (3.0.1)
+    postgresql (4.0.1)
 
 GITHUBTARBALL
   remote: boxen/puppet-repository
@@ -131,7 +131,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-vagrant
   specs:
-    vagrant (3.2.2)
+    vagrant (3.3.3)
 
 GITHUBTARBALL
   remote: boxen/puppet-xquartz
@@ -174,7 +174,7 @@ GITHUBTARBALL
     module_data (0.0.4)
 
 DEPENDENCIES
-  alfred (= 1.4.0)
+  alfred (= 1.5.0)
   boxen (= 3.11.0)
   brewcask (= 0.0.6)
   dnsmasq (= 2.0.1)
@@ -187,7 +187,7 @@ DEPENDENCIES
   hub (= 1.4.1)
   inifile (= 1.4.1)
   kaleidoscope (= 1.0.5)
-  karabiner (= 1.0.6)
+  karabiner (= 1.0.7)
   memcached (= 2.0.0)
   module_data (= 0.0.4)
   nginx (= 1.4.6)
@@ -198,15 +198,15 @@ DEPENDENCIES
   osx (= 2.8.0)
   phantomjs (= 3.0.0)
   pkgconfig (= 1.0.0)
-  postgresql (= 3.0.1)
+  postgresql (= 4.0.1)
   python (= 2.0.5)
   repository (= 2.4.1)
-  ruby (= 8.1.7)
   ruby (= 8.5.2)
   stdlib (= 4.7.0)
   sublime_text_3 (= 1.0.4b)
   sudo (= 1.0.0)
   sysctl (= 1.0.1)
   textual (= 4.2.0)
-  vagrant (= 3.2.2)
+  vagrant (= 3.3.3)
   xquartz (= 1.2.1)
+

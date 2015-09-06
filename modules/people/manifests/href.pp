@@ -331,12 +331,16 @@ class people::href {
     ]
     projects::global_python_package { $linter_python_packages : }
 
-    $linter_node_packages = [
-        'csslint',
-        'jshint',
-        'jsxhint'
-    ]
-    nodejs::module { $linter_node_packages :
+    npm_module { 'csslint' :
+        module       => 'csslint',
+        node_version => 'v0.10'
+    }
+    npm_module { 'jshint' :
+        module       => 'jshint',
+        node_version => 'v0.10'
+    }
+    npm_module { 'jsxhint' :
+        module       => 'jsxhint',
         node_version => 'v0.10'
     }
 
