@@ -97,6 +97,7 @@ class people::href {
     $applications = [
         'bartender',
         'charles',
+        'commander-one',
         'dash',
         'firefox',
         'firefoxdeveloperedition',
