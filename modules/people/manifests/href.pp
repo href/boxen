@@ -326,9 +326,6 @@ class people::href {
     sublime_text_3::package { 'SublimeLinter-jsxhint' :
         source => 'SublimeLinter/SublimeLinter-jsxhint'
     }
-    sublime_text_3::package { 'MagicPython' :
-        source => 'MagicStack/MagicPython'
-    }
 
     # for sublime linter
     $linter_python_packages = [
