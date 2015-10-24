@@ -4,6 +4,7 @@ define projects::haskell_package() {
     Class['projects::haskell_platform'] ->
 
     exec { "cabal install ${name}" :
-        unless => "ghc-pkg list | grep ${name} --ignore-case --silent"
+        unless  => "ghc-pkg list | grep ${name} --ignore-case --silent",
+        timeout => 0
     }
 }
