@@ -409,6 +409,11 @@ class people::href {
         target => "${dotfiles}/.tarsnaprc"
     }
 
+    file { "${home}/.psqlrc" : 
+        ensure => link,
+        target => "${dotfiles}/.psqlrc"
+    }
+
     # buildout defaults
     file { [
         "${home}/.buildout",
