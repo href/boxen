@@ -80,6 +80,7 @@ class people::href {
         'docker',
         'ghi',
         'go',
+        'keybase',
         'lftp',
         'jpeg',
         'libmagic',
@@ -409,7 +410,7 @@ class people::href {
         target => "${dotfiles}/.tarsnaprc"
     }
 
-    file { "${home}/.psqlrc" : 
+    file { "${home}/.psqlrc" :
         ensure => link,
         target => "${dotfiles}/.psqlrc"
     }
