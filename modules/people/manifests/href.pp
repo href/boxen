@@ -103,6 +103,7 @@ class people::href {
         'firefox',
         'firefoxdeveloperedition',
         'google-chrome-beta',
+        'hammerspoon',
         'harvest',
         'hipchat',
         'hive',
@@ -370,9 +371,9 @@ class people::href {
         target => "${dotfiles}/.vimrc",
     } ->
 
-    file { "${home}/.hydra" :
+    file { "${home}/.hammerspoon" :
         ensure => link,
-        target => "${dotfiles}/.hydra",
+        target => "${dotfiles}/.hammerspoon",
     } ->
 
     file { "${home}/.pythonrc" :
