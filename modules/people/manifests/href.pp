@@ -30,11 +30,11 @@ class people::href {
     }
 
     class { 'osx::global::key_repeat_rate' :
-        rate => 0
+        rate => 3
     }
 
     class { 'osx::global::key_repeat_delay' :
-        delay => 5
+        delay => 3
     }
 
     class { 'osx::dock::hot_corners' :
