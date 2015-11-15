@@ -494,5 +494,21 @@ class people::href {
     file { "${home}/.hushlogin" :
         ensure => 'present'
     }
+
+    # mail.app bundles
+    $bundles = "${home}/Library/Mail/Bundles"
+
+    file { $bundles :
+        ensure  => 'directory',
+    } ->
+    exec { 'delete2archive-download' :
+        command => "curl -L 'http://thingsofinterest.com/wp-content/uploads/2015/10/Delete2Archive-10.11.1.zip' > '${bundles}/delete2archive.zip'",
+        creates => "${bundles}/delete2archive.zip"
+    } ->
+    exec { 'delete2archive-extract' :
+        command => "unzip '${bundles}/delete2archive.zip'",
+        cwd     => $bundles,
+        creates => "${bundles}/Delete2Archive.mailbundle"
+    }
 }
 # lint:endignore
