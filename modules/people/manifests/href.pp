@@ -111,6 +111,7 @@ class people::href {
         'iterm2',
         'navicat-premium',
         'omnifocus',
+        'sketch',
         'skype',
         'spotify',
         'steam',
