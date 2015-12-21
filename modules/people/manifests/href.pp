@@ -118,7 +118,8 @@ class people::href {
         'the-tagger',
         'the-unarchiver',
         'panic-unison',
-        'viscosity'
+        'viscosity',
+        'ynab'
     ]
 
     homebrew::tap { 'caskroom/versions' : } ->
