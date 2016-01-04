@@ -220,9 +220,9 @@ class people::href {
 
     # vagrant
     class { 'vagrant' :
-        version => '1.7.2'
+        version => '1.8.0'
     } ->
-    vagrant::plugin { 'vagrant-multiprovider-snap' : }
+    vagrant::plugin { 'vagrant-cachier' : }
 
     # sublime text 3
     include sublime_text_3

@@ -75,5 +75,5 @@ github "python",            "2.0.7", :repo => "href/puppet-python"
 github "sublime_text_3",    "1.0.4b", :repo => "href/puppet-sublime_text_3"
 github "sysctl",            "1.0.1"
 github "textual",           "4.2.0"
-github "vagrant",           "3.3.3"
+github "vagrant",           "3.3.4"
 
