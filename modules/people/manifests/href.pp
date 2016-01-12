@@ -29,14 +29,6 @@ class people::href {
         enabled => false
     }
 
-    class { 'osx::global::key_repeat_rate' :
-        rate => 3
-    }
-
-    class { 'osx::global::key_repeat_delay' :
-        delay => 3
-    }
-
     class { 'osx::dock::hot_corners' :
         bottom_right => 'Mission Control'
     }

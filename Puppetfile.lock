@@ -151,7 +151,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: href/puppet-elasticsearch
   specs:
-    elasticsearch (2.9.1)
+    elasticsearch (2.9.3)
 
 GITHUBTARBALL
   remote: href/puppet-python
@@ -189,7 +189,7 @@ DEPENDENCIES
   brewcask (= 0.0.6)
   dnsmasq (= 2.0.1)
   dropbox (= 1.4.1)
-  elasticsearch (= 2.9.1)
+  elasticsearch (= 2.9.3)
   foreman (= 1.2.0)
   gcc (= 3.0.2)
   git (= 2.7.92)
