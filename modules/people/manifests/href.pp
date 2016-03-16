@@ -349,6 +349,18 @@ class people::href {
         module       => 'jsxhint',
         node_version => 'v0.10'
     }
+    npm_module { 'eslint' :
+        module       => 'eslint',
+        node_version => 'v0.10'
+    }
+    npm_module { 'babel-eslint' :
+        module       => 'eslint',
+        node_version => 'v0.10'
+    }
+    npm_module { 'eslint-plugin-react' :
+        module       => 'eslint',
+        node_version => 'v0.10'
+    }
 
     # dotfiles
     repository { $dotfiles :
