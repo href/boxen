@@ -62,7 +62,7 @@ github "xquartz",     "1.2.1"
 # https://github.com/boxen.
 github "alfred",            "1.5.0"
 github "dropbox",           "1.4.1"
-github "elasticsearch",     "2.9.3", :repo => "href/puppet-elasticsearch"
+github "elasticsearch",     "2.9.5", :repo => "href/puppet-elasticsearch"
 github "java",              "1.8.4"
 github "kaleidoscope",      "1.0.5", :repo => "ngs/puppet-kaleidoscope"
 github "karabiner",         "1.0.7"
