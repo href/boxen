@@ -92,7 +92,6 @@ class people::href {
         'commander-one',
         'dash',
         'firefox',
-        'firefoxdeveloperedition',
         'google-chrome',
         'hammerspoon',
         'harvest',
@@ -103,14 +102,12 @@ class people::href {
         'navicat-premium',
         'omnifocus',
         'sketch',
-        'skype',
         'spotify',
         'steam',
         'the-tagger',
         'the-unarchiver',
         'panic-unison',
         'viscosity',
-        'ynab'
     ]
 
     homebrew::tap { 'caskroom/versions' : } ->
