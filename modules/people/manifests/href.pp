@@ -58,7 +58,6 @@ class people::href {
     # core modules
     include alfred
     include brewcask
-    include dropbox
     include elasticsearch
     include littlesnitch
     include memcached
@@ -190,20 +189,25 @@ class people::href {
     include 'projects::haskell_platform'
     projects::haskell_package { 'shellcheck' : }
 
+    # have a link to the icloud drive
+    $icloud = '/Users/denis/Library/Mobile Documents/com~apple~CloudDocs'
+    file { '/Users/denis/iCloud Drive' :
+        ensure => 'link',
+        target => $icloud
+    }
+
     # sublime text syncing
-    $dropbox = '/Users/denis/Dropbox'
     $application_support = '/Users/denis/Library/Application Support'
 
-    Class['dropbox'] ->
     Class['sublime_text_3'] ->
 
-    exec { "mkdir -p ${dropbox}/Sublime-Sync/Packages/User" :
-        creates => "${dropbox}/Sublime-Sync/Packages/User"
+    exec { "mkdir -p ${icloud}/Sublime-Sync/Packages/User" :
+        creates => "${icloud}/Sublime-Sync/Packages/User"
     } ->
 
     file { "${application_support}/Sublime Text 3/Packages/User" :
         ensure => 'link',
-        target => "${dropbox}/Sublime-Sync/Packages/User",
+        target => "${icloud}/Sublime-Sync/Packages/User",
         force  => true
     }
 
@@ -441,13 +445,6 @@ class people::href {
     # install zsh plugins
     file { ["${home}/.zsh", "${home}/.zsh/plugins"] :
         ensure => 'directory',
-    } ->
-    file { "${home}/.zsh/plugins/bd" :
-        ensure => 'directory'
-    } ->
-    exec { 'install bd zsh plugin' :
-        command => "curl https://raw.githubusercontent.com/Tarrasch/zsh-bd/master/bd.zsh > ${home}/.zsh/plugins/bd/bd.zsh",
-        creates => "${home}/.zsh/plugins/bd/bd.zsh"
     }
 
     # python

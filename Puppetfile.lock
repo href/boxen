@@ -19,11 +19,6 @@ GITHUBTARBALL
     dnsmasq (2.0.1)
 
 GITHUBTARBALL
-  remote: boxen/puppet-dropbox
-  specs:
-    dropbox (1.4.1)
-
-GITHUBTARBALL
   remote: boxen/puppet-foreman
   specs:
     foreman (1.2.0)
@@ -51,7 +46,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-hub
   specs:
-    hub (1.4.2)
+    hub (1.4.3)
 
 GITHUBTARBALL
   remote: boxen/puppet-java
@@ -188,14 +183,13 @@ DEPENDENCIES
   boxen (= 3.11.0)
   brewcask (= 0.0.7)
   dnsmasq (= 2.0.1)
-  dropbox (= 1.4.1)
   elasticsearch (= 2.9.5)
   foreman (= 1.2.0)
   gcc (= 3.0.2)
   git (= 2.8.1)
   go (= 2.1.0)
   homebrew (= 2.0.2)
-  hub (= 1.4.2)
+  hub (= 1.4.3)
   inifile (= 1.5.0)
   java (= 1.8.4)
   kaleidoscope (= 1.0.5)
