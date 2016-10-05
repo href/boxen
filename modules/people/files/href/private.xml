@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <root>
-
   <vkopenurldef>
     <name>KeyCode::VK_OPEN_URL_APP_Editor</name>
     <url type="file">/Applications/Sublime Text.app</url>
@@ -28,7 +27,7 @@
 
   <vkopenurldef>
     <name>KeyCode::VK_OPEN_URL_APP_OmniFocus</name>
-    <url type="file">/opt/homebrew-cask/Caskroom/omnifocus/2.1/OmniFocus.app</url>
+    <url type="file">/Applications/OmniFocus.app</url>
   </vkopenurldef>
 
   <replacementdef>

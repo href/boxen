@@ -131,6 +131,11 @@ class people::href {
     # have the IBM keyboard @ available
     karabiner::remap { 'altgr_2_to_atmark': }
 
+    karabiner::exec { 'karabiner::set remap.launcher_mode_v2 1':
+        command => 'set remap.launcher_mode_v2 1',
+        unless  => 'remap.launcher_mode_v2=1',
+    }
+
     karabiner::private_xml{ 'private.xml':
         source => "${userfiles}/private.xml"
     }
