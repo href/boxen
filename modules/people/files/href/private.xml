@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<root>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Editor</name>
+    <url type="file">/Applications/Sublime Text.app</url>
+  </vkopenurldef>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Safari</name>
+    <url type="file">/Applications/Safari.app</url>
+  </vkopenurldef>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Mail</name>
+    <url type="file">/Applications/Mail.app</url>
+  </vkopenurldef>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Terminal</name>
+    <url type="file">/Applications/iTerm.app</url>
+  </vkopenurldef>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_Chat</name>
+    <url type="file">/Applications/Franz.app</url>
+  </vkopenurldef>
+
+  <vkopenurldef>
+    <name>KeyCode::VK_OPEN_URL_APP_OmniFocus</name>
+    <url type="file">/opt/homebrew-cask/Caskroom/omnifocus/2.1/OmniFocus.app</url>
+  </vkopenurldef>
+
+  <replacementdef>
+    <replacementname>LAUNCHER_MODE_V2_EXTRA</replacementname>
+    <replacementvalue>
+      <![CDATA[
+        <autogen>
+          __KeyDownUpToKey__
+          KeyCode::E,
+          KeyCode::VK_OPEN_URL_APP_Editor,
+        </autogen>
+
+        <autogen>
+          __KeyDownUpToKey__
+          KeyCode::S,
+          KeyCode::VK_OPEN_URL_APP_Safari,
+        </autogen>
+
+        <autogen>
+          __KeyDownUpToKey__
+          KeyCode::M,
+          KeyCode::VK_OPEN_URL_APP_Mail,
+        </autogen>
+
+        <autogen>
+          __KeyDownUpToKey__
+          KeyCode::T,
+          KeyCode::VK_OPEN_URL_APP_Terminal,
+        </autogen>
+
+        <autogen>
+          __KeyDownUpToKey__
+          KeyCode::C,
+          KeyCode::VK_OPEN_URL_APP_Chat,
+        </autogen>
+
+        <autogen>
+          __KeyDownUpToKey__
+          KeyCode::F,
+          KeyCode::VK_OPEN_URL_APP_OmniFocus,
+        </autogen>
+      ]]>
+    </replacementvalue>
+  </replacementdef>
+
+</root>

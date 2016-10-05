@@ -131,6 +131,10 @@ class people::href {
     # have the IBM keyboard @ available
     karabiner::remap { 'altgr_2_to_atmark': }
 
+    karabiner::private_xml{ 'private.xml':
+        source => "${userfiles}/private.xml"
+    }
+
     # user-scripts
     file { $userscripts :
         ensure => directory
