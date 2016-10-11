@@ -88,25 +88,20 @@ class people::href {
 
     # mac apps (from cask)
     $applications = [
-        'bartender',
-        'commander-one',
         'dash',
         'firefox',
         'google-chrome',
         'hammerspoon',
         'harvest',
         'hipchat',
-        'hive',
         'inkscape',
         'iterm2-beta',
         'navicat-premium',
         'omnifocus',
         'sketch',
-        'spotify',
         'steam',
         'the-tagger',
         'the-unarchiver',
-        'panic-unison',
         'viscosity',
     ]
 
