@@ -116,25 +116,6 @@ class people::href {
         make_default => false,
     }
 
-    # key remappings
-    include karabiner
-    include karabiner::login_item
-
-    # remove the non-breaking spaces which ironically breaks code
-    karabiner::remap{ 'option_space_to_space': }
-
-    # have the IBM keyboard @ available
-    karabiner::remap { 'altgr_2_to_atmark': }
-
-    karabiner::exec { 'karabiner::set remap.launcher_mode_v2 1':
-        command => 'set remap.launcher_mode_v2 1',
-        unless  => 'remap.launcher_mode_v2=1',
-    }
-
-    karabiner::private_xml{ 'private.xml':
-        source => "${userfiles}/private.xml"
-    }
-
     # user-scripts
     file { $userscripts :
         ensure => directory

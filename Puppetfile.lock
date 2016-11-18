@@ -46,7 +46,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-hub
   specs:
-    hub (1.4.3)
+    hub (1.4.4)
 
 GITHUBTARBALL
   remote: boxen/puppet-java
@@ -54,15 +54,9 @@ GITHUBTARBALL
     java (1.8.4)
 
 GITHUBTARBALL
-  remote: boxen/puppet-karabiner
-  specs:
-    karabiner (1.0.8)
-
-GITHUBTARBALL
   remote: boxen/puppet-memcached
   specs:
     memcached (2.0.0)
-    hub (1.4.4)
 
 GITHUBTARBALL
   remote: boxen/puppet-nginx
@@ -72,13 +66,12 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-nodejs
   specs:
-    nodejs (5.0.5)
+    nodejs (5.0.8)
 
 GITHUBTARBALL
   remote: boxen/puppet-onepassword
   specs:
     onepassword (1.1.5)
-    nodejs (5.0.8)
 
 GITHUBTARBALL
   remote: boxen/puppet-openssl
@@ -195,7 +188,6 @@ DEPENDENCIES
   inifile (= 1.5.0)
   java (= 1.8.4)
   kaleidoscope (= 1.0.5)
-  karabiner (= 1.0.8)
   memcached (= 2.0.0)
   module_data (= 0.0.4)
   nginx (= 1.7.0)
@@ -217,3 +209,4 @@ DEPENDENCIES
   textual (= 4.2.0)
   vagrant (= 3.3.4)
   xquartz (= 1.2.1)
+
