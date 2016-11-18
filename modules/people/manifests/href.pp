@@ -54,7 +54,6 @@ class people::href {
         value => true
     }
 
-
     # core modules
     include alfred
     include brewcask
