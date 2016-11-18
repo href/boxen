@@ -56,7 +56,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: boxen/puppet-memcached
   specs:
-    memcached (2.0.0)
+    memcached (2.1.0)
 
 GITHUBTARBALL
   remote: boxen/puppet-nginx
@@ -141,7 +141,7 @@ GITHUBTARBALL
 GITHUBTARBALL
   remote: href/puppet-elasticsearch
   specs:
-    elasticsearch (2.9.5)
+    elasticsearch (2.9.6)
 
 GITHUBTARBALL
   remote: href/puppet-sublime_text_3
@@ -178,7 +178,7 @@ DEPENDENCIES
   boxen (= 3.11.1)
   brewcask (= 0.0.7)
   dnsmasq (= 2.0.2)
-  elasticsearch (= 2.9.5)
+  elasticsearch (= 2.9.6)
   foreman (= 1.2.0)
   gcc (= 3.0.2)
   git (= 2.10.0)
@@ -188,7 +188,7 @@ DEPENDENCIES
   inifile (= 1.5.0)
   java (= 1.8.4)
   kaleidoscope (= 1.0.5)
-  memcached (= 2.0.0)
+  memcached (= 2.1.0)
   module_data (= 0.0.4)
   nginx (= 1.7.0)
   nodejs (= 5.0.8)

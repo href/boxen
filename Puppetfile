@@ -61,10 +61,10 @@ github "xquartz",     "1.2.1"
 # Optional/custom modules. There are tons available at
 # https://github.com/boxen.
 github "alfred",            "1.5.0"
-github "elasticsearch",     "2.9.5", :repo => "href/puppet-elasticsearch"
+github "elasticsearch",     "2.9.6", :repo => "href/puppet-elasticsearch"
 github "java",              "1.8.4"
 github "kaleidoscope",      "1.0.5", :repo => "ngs/puppet-kaleidoscope"
-github "memcached",         "2.0.0"
+github "memcached",         "2.1.0"
 github "ohmyzsh",           "0.0.1", :repo => "haelmy/puppet-ohmyzsh"
 github "onepassword",       "1.1.5"
 github "osx",               "2.8.0"
