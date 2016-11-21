@@ -89,10 +89,10 @@ class people::href {
     $applications = [
         'dash',
         'firefox',
+        'franz',
         'google-chrome',
         'hammerspoon',
         'harvest',
-        'hipchat',
         'inkscape',
         'iterm2-beta',
         'navicat-premium',
