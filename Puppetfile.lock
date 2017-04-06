@@ -149,11 +149,6 @@ GITHUBTARBALL
     sublime_text_3 (1.0.4b)
 
 GITHUBTARBALL
-  remote: ngs/puppet-kaleidoscope
-  specs:
-    kaleidoscope (1.0.5)
-
-GITHUBTARBALL
   remote: puppetlabs/puppetlabs-inifile
   specs:
     inifile (1.5.0)
@@ -187,7 +182,6 @@ DEPENDENCIES
   hub (= 1.4.4)
   inifile (= 1.5.0)
   java (= 1.8.4)
-  kaleidoscope (= 1.0.5)
   memcached (= 2.1.0)
   module_data (= 0.0.4)
   nginx (= 1.7.0)

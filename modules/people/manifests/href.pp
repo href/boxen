@@ -38,11 +38,8 @@ class people::href {
     }
 
     # git config
-    git::config::global { 'user.email' :
-        value => 'denis.krienbuehl@seantis.ch'
-    }
-    git::config::global { 'user.name' :
-        value => 'Denis Krienbühl'
+    git::config::global { 'user.useConfigOnly' :
+        value => true
     }
     git::config::global { 'color.ui' :
         value => true
@@ -51,6 +48,30 @@ class people::href {
         value => 'input'
     }
     git::config::global { 'core.precomposeunicode' :
+        value => true
+    }
+    git::config::global { 'alias.prune' :
+        value => 'fetch --prune'
+    }
+    git::config::global { 'alias.undo' :
+        value => 'reset --soft HEAD^'
+    }
+    git::config::global { 'alias.stash-all' :
+        value => 'stash save --include-untracked'
+    }
+    git::config::global { 'merge.ff' :
+        value => 'only'
+    }
+    git::config::global { 'commit.gpgSign' :
+        value => true
+    }
+    git::config::global { 'push.followTags' :
+        value => true
+    }
+    git::config::global { 'status.showUntrackedFiles' :
+        value => 'all'
+    }
+    git::config::global { 'transfer.fsckobjects' :
         value => true
     }
 
@@ -68,15 +89,12 @@ class people::href {
     # libraries / cli tools
     $core_packages = [
         'aria2',
-        'docker',
-        'ghi',
         'go',
         'keybase',
         'lftp',
         'jpeg',
         'libmagic',
         'libpng',
-        'lynx',
         'packer',
         'tarsnap'
     ]
@@ -95,6 +113,7 @@ class people::href {
         'harvest',
         'inkscape',
         'iterm2-beta',
+        'kaleidoscope',
         'navicat-premium',
         'omnifocus',
         'sketch',
@@ -110,9 +129,28 @@ class people::href {
         provider => 'brewcask'
     }
 
-    # let kaleidoscope handle the .gitconfig
-    class { 'kaleidoscope' :
-        make_default => false,
+    # setup kaleidoscope
+    Package['kaleidoscope'] ->
+
+    file { "${boxen::config::bindir}/ksdiff" :
+        ensure => link,
+        target => '/Applications/Kaleidoscope.app/Contents/Resources/bin/ksdiff',
+        mode   => '0755',
+    } ->
+    git::config::global { 'difftool "Kaleidoscope".cmd':
+      value => 'ksdiff --partial-changeset --relative-path "$MERGED" -- "$LOCAL" "$REMOTE"',
+    }
+    git::config::global { 'diff.tool':
+      value => 'Kaleidoscope',
+    }
+    git::config::global { 'mergetool "Kaleidoscope".cmd':
+      value => 'ksdiff --merge --output "$MERGED" --base "$BASE" -- "$LOCAL" --snapshot "$REMOTE" --snapshot',
+    }
+    git::config::global { 'mergetool "Kaleidoscope".trustExitCode':
+      value => true,
+    }
+    git::config::global { 'merge.tool' :
+      value => 'Kaleidoscope',
     }
 
     # user-scripts
@@ -405,6 +443,11 @@ class people::href {
     file { "${home}/.psqlrc" :
         ensure => link,
         target => "${dotfiles}/.psqlrc"
+    }
+
+    file { "${home}/.gitconfig" :
+        ensure => link,
+        target => "${dotfiles}/.gitconfig"
     }
 
     # buildout defaults
