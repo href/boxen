@@ -445,11 +445,6 @@ class people::href {
         target => "${dotfiles}/.psqlrc"
     }
 
-    file { "${home}/.gitconfig" :
-        ensure => link,
-        target => "${dotfiles}/.gitconfig"
-    }
-
     # buildout defaults
     file { [
         "${home}/.buildout",
