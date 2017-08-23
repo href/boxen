@@ -478,21 +478,6 @@ class people::href {
         virtualenv => $python::config::global_venv
     }
 
-    # virtualenvwrapper postactivate
-    file { "${home}/.virtualenvs" :
-        ensure => directory
-    } ->
-    file { "${home}/.virtualenvs/postactivate" :
-        ensure => present,
-        source => "${userfiles}/postactivate",
-        mode   => '0775'
-    } ->
-    file { "${home}/.virtualenvs/postmkvirtualenv" :
-        ensure => present,
-        source => "${userfiles}/postmkvirtualenv",
-        mode   => '0775'
-    }
-
     # logs
     file { $logs :
         ensure => directory
