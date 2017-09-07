@@ -64,11 +64,6 @@ GITHUBTARBALL
     nginx (1.7.0)
 
 GITHUBTARBALL
-  remote: boxen/puppet-nodejs
-  specs:
-    nodejs (5.0.8)
-
-GITHUBTARBALL
   remote: boxen/puppet-onepassword
   specs:
     onepassword (1.1.5)
@@ -185,7 +180,6 @@ DEPENDENCIES
   memcached (= 2.1.0)
   module_data (= 0.0.4)
   nginx (= 1.7.0)
-  nodejs (= 5.0.8)
   ohmyzsh (= 0.0.1)
   onepassword (= 1.1.5)
   openssl (= 1.0.0)

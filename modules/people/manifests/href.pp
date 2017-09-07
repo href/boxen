@@ -37,6 +37,11 @@ class people::href {
         enable => false
     }
 
+    # remove old nodeenv
+    file { '/opt/boxen/env.d/30_nodejs.sh' :
+        ensure => 'absent'
+    }
+
     # git config
     git::config::global { 'user.useConfigOnly' :
         value => true
@@ -359,31 +364,6 @@ class people::href {
         'pyyaml',
     ]
     projects::global_python_package { $linter_python_packages : }
-
-    npm_module { 'csslint' :
-        module       => 'csslint',
-        node_version => 'v0.10'
-    }
-    npm_module { 'jshint' :
-        module       => 'jshint',
-        node_version => 'v0.10'
-    }
-    npm_module { 'jsxhint' :
-        module       => 'jsxhint',
-        node_version => 'v0.10'
-    }
-    npm_module { 'eslint' :
-        module       => 'eslint',
-        node_version => 'v0.10'
-    }
-    npm_module { 'babel-eslint' :
-        module       => 'eslint',
-        node_version => 'v0.10'
-    }
-    npm_module { 'eslint-plugin-react' :
-        module       => 'eslint',
-        node_version => 'v0.10'
-    }
 
     # dotfiles
     repository { $dotfiles :
